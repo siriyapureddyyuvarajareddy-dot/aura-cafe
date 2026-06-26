@@ -1,59 +1,61 @@
-const sqlite3 = require('sqlite3').verbose();
+const { createClient } = require('@libsql/client');
 const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
 
-const dbPath = process.env.DATABASE_PATH || (process.env.NODE_ENV === 'test'
-  ? path.join(__dirname, 'test_aura_cafe.db')
-  : path.join(__dirname, 'aura_cafe.db'));
+let client;
+const isTurso = !!process.env.TURSO_DATABASE_URL;
 
-// Ensure db file directory exists
-const dbDir = path.dirname(dbPath);
-if (!fs.existsSync(dbDir)) {
-  fs.mkdirSync(dbDir, { recursive: true });
+if (isTurso) {
+  console.log('Connected to Turso database:', process.env.TURSO_DATABASE_URL);
+  client = createClient({
+    url: process.env.TURSO_DATABASE_URL,
+    authToken: process.env.TURSO_AUTH_TOKEN
+  });
+} else {
+  const dbPath = process.env.DATABASE_PATH || (process.env.NODE_ENV === 'test'
+    ? path.join(__dirname, 'test_aura_cafe.db')
+    : path.join(__dirname, 'aura_cafe.db'));
+
+  // Ensure db file directory exists
+  const dbDir = path.dirname(dbPath);
+  if (!fs.existsSync(dbDir)) {
+    fs.mkdirSync(dbDir, { recursive: true });
+  }
+
+  const absolutePath = path.resolve(dbPath);
+  const fileUrl = 'file:' + absolutePath;
+  console.log('Connected to local SQLite database via libSQL:', fileUrl);
+  client = createClient({
+    url: fileUrl
+  });
 }
 
-const db = new sqlite3.Database(dbPath, (err) => {
-  if (err) {
-    console.error('Database opening error:', err.message);
-  } else {
-    console.log('Connected to the SQLite database.');
-  }
-});
+// Keep db variable pointing to client for compatibility
+const db = client;
 
-// Helper wrapper to use async/await with SQLite
+// Helper wrapper to use async/await with libSQL Client
 const dbQuery = {
-  run: (sql, params = []) => {
-    return new Promise((resolve, reject) => {
-      db.run(sql, params, function (err) {
-        if (err) reject(err);
-        else resolve({ id: this.lastID, changes: this.changes });
-      });
-    });
+  run: async (sql, params = []) => {
+    const result = await client.execute({ sql, args: params });
+    return {
+      id: result.lastInsertRowid !== undefined && result.lastInsertRowid !== null
+        ? Number(result.lastInsertRowid)
+        : undefined,
+      changes: result.rowsAffected
+    };
   },
-  get: (sql, params = []) => {
-    return new Promise((resolve, reject) => {
-      db.get(sql, params, (err, row) => {
-        if (err) reject(err);
-        else resolve(row);
-      });
-    });
+  get: async (sql, params = []) => {
+    const result = await client.execute({ sql, args: params });
+    if (result.rows.length === 0) return undefined;
+    return { ...result.rows[0] };
   },
-  all: (sql, params = []) => {
-    return new Promise((resolve, reject) => {
-      db.all(sql, params, (err, rows) => {
-        if (err) reject(err);
-        else resolve(rows);
-      });
-    });
+  all: async (sql, params = []) => {
+    const result = await client.execute({ sql, args: params });
+    return result.rows.map(row => ({ ...row }));
   },
-  exec: (sql) => {
-    return new Promise((resolve, reject) => {
-      db.exec(sql, (err) => {
-        if (err) reject(err);
-        else resolve();
-      });
-    });
+  exec: async (sql) => {
+    await client.execute(sql);
   }
 };
 
@@ -680,12 +682,14 @@ async function initDb() {
 }
 
 function closeDb() {
-  return new Promise((resolve, reject) => {
-    db.close((err) => {
-      if (err) reject(err);
-      else resolve();
-    });
-  });
+  try {
+    if (client && typeof client.close === 'function') {
+      client.close();
+    }
+    return Promise.resolve();
+  } catch (err) {
+    return Promise.reject(err);
+  }
 }
 
 module.exports = {

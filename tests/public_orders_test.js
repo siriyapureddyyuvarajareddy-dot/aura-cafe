@@ -142,8 +142,12 @@ async function runPublicTests() {
     const path = require('path');
     const testDbFile = path.join(__dirname, '../backend/test_aura_cafe.db');
     if (fs.existsSync(testDbFile)) {
-      fs.unlinkSync(testDbFile);
-      console.log('Deleted temporary test database file.');
+      try {
+        fs.unlinkSync(testDbFile);
+        console.log('Deleted temporary test database file.');
+      } catch (e) {
+        console.warn('Could not delete test database file immediately:', e.message);
+      }
     }
 
     setTimeout(() => {
@@ -163,7 +167,11 @@ async function runPublicTests() {
       const fs = require('fs');
       const path = require('path');
       const testDbFile = path.join(__dirname, '../backend/test_aura_cafe.db');
-      if (fs.existsSync(testDbFile)) fs.unlinkSync(testDbFile);
+      if (fs.existsSync(testDbFile)) {
+        try {
+          fs.unlinkSync(testDbFile);
+        } catch (e) {}
+      }
     } catch (e) {}
     process.exit(1);
   }
