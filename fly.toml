@@ -1,0 +1,21 @@
+# fly.toml configuration file for Aura Cafe Deployment
+# 
+# See https://fly.io/docs/reference/configuration/ for information
+
+app = "aura-cafe"
+primary_region = "maa"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[mounts]]
+  source = "aura_cafe_data"
+  destination = "/data"
