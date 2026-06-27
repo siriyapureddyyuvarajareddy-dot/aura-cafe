@@ -3123,56 +3123,146 @@ function printKitchenToken(tableName, guestName, items) {
     return;
   }
 
-  // Helper inside function to get print category
-  function getKOTPrintCategory(cat) {
-    const c = cat.toLowerCase().trim();
-    if (c.includes('starter')) return 'STARTERS';
-    if (c.includes('burger')) return 'BURGERS';
-    if (c.includes('fried veg') || c.includes('fried items') || c.includes('fried veg items')) return 'FRIED ITEMS';
-    if (c.includes('egg')) return 'EGG ITEMS';
-    if (c.includes('juice') || c.includes('shake') || c.includes('beverage') || c.includes('drink') || c.includes('cool drinks')) return 'COOL DRINKS';
-    if (c.includes('biryani') || c.includes('biriyani')) return 'BIRYANI';
-    if (c.includes('rice')) return 'FRIED RICE';
-    if (c.includes('noodle')) return 'NOODLES';
-    if (c.includes('momo')) return 'MOMOS';
-    if (c.includes('maggi') || c.includes('maggie')) return 'MAGGI';
-    return cat.toUpperCase();
+  // Helper inside function to check if item is Veg
+  function isVegItemForKOT(itemName, itemCategory) {
+    const name = itemName.toLowerCase();
+    const cat = itemCategory.toLowerCase();
+    
+    if (name.includes('chicken') || 
+        name.includes('egg') || 
+        name.includes('prawn') || 
+        name.includes('mutton') || 
+        name.includes('fish') || 
+        name.includes('paya') || 
+        name.includes('omlete') || 
+        name.includes('peddamma') ||
+        cat.includes('non-veg') || 
+        cat.includes('non veg')) {
+      return false;
+    }
+    return true;
   }
 
-  // Group active orders by print category
-  const grouped = {};
-  items.forEach(o => {
-    const pCat = getKOTPrintCategory(o.category);
-    if (!grouped[pCat]) {
-      grouped[pCat] = [];
+  // Helper to format sub-category names for KOT display
+  function getKOTSubCategory(o) {
+    const cat = o.category.toLowerCase().trim();
+    const name = o.item_name.toLowerCase().trim();
+    
+    const isVeg = isVegItemForKOT(o.item_name, o.category);
+    
+    if (cat.includes('starter')) {
+      return isVeg ? 'STARTERS VEG' : 'STARTERS NON-VEG';
     }
-    grouped[pCat].push(o);
+    if (cat.includes('rice')) {
+      return isVeg ? 'FRIED RICE VEG' : 'FRIED RICE NON-VEG';
+    }
+    if (cat.includes('noodle')) {
+      return isVeg ? 'NOODLES VEG' : 'NOODLES NON-VEG';
+    }
+    
+    // KOT2 categories
+    if (cat.includes('chicken') && cat.includes('fried')) {
+      return 'FRIED CHICKEN ITEMS';
+    }
+    if (cat.includes('bowl')) {
+      return 'FRUIT BOWLS';
+    }
+    if (cat.includes('somosa') || cat.includes('samosa')) {
+      return 'SAMOSA';
+    }
+    if (cat.includes('sandwich')) {
+      return 'SANDWICH';
+    }
+    if (cat.includes('burger')) {
+      return isVeg ? 'VEG BURGERS' : 'NON-VEG BURGERS';
+    }
+    if (cat.includes('egg')) {
+      return 'EGG';
+    }
+    if (cat.includes('fried veg') || (cat.includes('fried') && !cat.includes('chicken'))) {
+      return 'FRIED VEG';
+    }
+    if (cat.includes('momo')) {
+      return "MOMO'S";
+    }
+    if (cat.includes('maggi') || cat.includes('maggie')) {
+      return 'MAGGIE';
+    }
+    if (cat.includes('juice')) {
+      return 'FRESH FRUIT JUICE';
+    }
+    if (cat.includes('shake')) {
+      return 'MILK SHAKE';
+    }
+    if (cat === 'milk' || name.includes('tea') || name.includes('coffee') || name.includes('milk') || name.includes('boost') || name.includes('horlics')) {
+      return 'MILK';
+    }
+    if (cat.includes('biryani') || cat.includes('biriyani')) {
+      return 'BIRYANI';
+    }
+    
+    return o.category.toUpperCase();
+  }
+
+  // Group active orders into KOT 1 and KOT 2
+  const kot1Grouped = {};
+  const kot2Grouped = {};
+
+  items.forEach(o => {
+    const cat = o.category.toLowerCase().trim();
+    const subCat = getKOTSubCategory(o);
+    
+    // KOT 1: Starters (Veg/Non-Veg), Fried Rice (Veg/Non-Veg), Noodles (Veg/Non-Veg)
+    if (cat.includes('starter') || cat.includes('rice') || cat.includes('noodle')) {
+      if (!kot1Grouped[subCat]) kot1Grouped[subCat] = [];
+      kot1Grouped[subCat].push(o);
+    } else {
+      // KOT 2: Everything else
+      if (!kot2Grouped[subCat]) kot2Grouped[subCat] = [];
+      kot2Grouped[subCat].push(o);
+    }
   });
 
   const today = new Date();
   const dateStr = today.toLocaleDateString('en-GB');
   const timeStr = today.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 
-  const categoriesHTML = Object.keys(grouped).map((catName, index, arr) => {
-    const catItems = grouped[catName];
-    const itemsRows = catItems.map(o => `
-      <tr>
-        <td style="padding: 6px 0; font-size: 1.15rem; font-weight: bold; border-bottom: 1px dotted #ccc;">${o.item_name}</td>
-        <td style="text-align: center; padding: 6px 0; font-size: 1.35rem; font-weight: bold; border-bottom: 1px dotted #ccc;">${o.quantity}</td>
-      </tr>
-    `).join('');
+  function generateKOTHtml(kotName, groupedItems, hasMore) {
+    const subCategoriesHTML = Object.keys(groupedItems).map(subCat => {
+      const catItems = groupedItems[subCat];
+      const itemsRows = catItems.map(o => `
+        <tr>
+          <td style="padding: 6px 0; font-size: 1.15rem; font-weight: bold; border-bottom: 1px dotted #ccc;">${o.item_name}</td>
+          <td style="text-align: center; padding: 6px 0; font-size: 1.35rem; font-weight: bold; border-bottom: 1px dotted #ccc;">${o.quantity}</td>
+        </tr>
+      `).join('');
 
-    // Add page break styles: page-break-after: always for all but the last page
-    const pageBreakStyle = index < arr.length - 1 ? 'page-break-after: always; break-after: page;' : '';
+      return `
+        <div style="margin-top: 10px; margin-bottom: 15px;">
+          <div style="font-size: 1.1rem; font-weight: 800; background: #000; color: #fff; padding: 3px 6px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
+            ${subCat}
+          </div>
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr>
+                <th style="border-bottom: 1px dashed #000; padding: 4px 0; text-align: left; font-size: 0.95rem;">Item</th>
+                <th style="border-bottom: 1px dashed #000; padding: 4px 0; text-align: center; width: 60px; font-size: 0.95rem;">Qty</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${itemsRows}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }).join('');
+
+    const pageBreakStyle = hasMore ? 'page-break-after: always; break-after: page;' : '';
 
     return `
       <div class="kot-page" style="${pageBreakStyle} padding: 10px; max-width: 300px; margin: 0 auto; color: #000;">
-        <div class="title">KITCHEN TOKEN (KOT)</div>
+        <div class="title">${kotName}</div>
         
-        <div style="text-align: center; font-size: 1.25rem; font-weight: 800; background: #000; color: #fff; padding: 4px; margin-bottom: 12px; letter-spacing: 1px; text-transform: uppercase;">
-          ${catName}
-        </div>
-
         <div class="meta">
           <div class="meta-row">
             <span><strong>Table/Room:</strong></span>
@@ -3188,24 +3278,25 @@ function printKitchenToken(tableName, guestName, items) {
           </div>
         </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th style="border-bottom: 1px dashed #000; padding: 4px 0; text-align: left; font-size: 1rem;">Item</th>
-              <th style="border-bottom: 1px dashed #000; padding: 4px 0; text-align: center; width: 60px; font-size: 1rem;">Qty</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${itemsRows}
-          </tbody>
-        </table>
+        ${subCategoriesHTML}
         
         <div style="border-top: 2px dashed #000; margin-top: 20px; padding-top: 8px; text-align: center; font-size: 0.8rem; font-weight: bold;">
-          Aura Cafe Kitchen - KOT Station Copy
+          Aura Cafe Kitchen - KOT Copy
         </div>
       </div>
     `;
-  }).join('');
+  }
+
+  let kotHtml = '';
+  const hasKot1 = Object.keys(kot1Grouped).length > 0;
+  const hasKot2 = Object.keys(kot2Grouped).length > 0;
+
+  if (hasKot1) {
+    kotHtml += generateKOTHtml('KOT 1', kot1Grouped, hasKot2);
+  }
+  if (hasKot2) {
+    kotHtml += generateKOTHtml('KOT 2', kot2Grouped, false);
+  }
 
   printWindow.document.write(`
     <html>
@@ -3219,11 +3310,12 @@ function printKitchenToken(tableName, guestName, items) {
           }
           .title {
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: bold;
             border-bottom: 2px dashed #000;
             padding-bottom: 6px;
             margin-bottom: 10px;
+            letter-spacing: 1px;
           }
           .meta {
             font-size: 0.9rem;
@@ -3236,10 +3328,6 @@ function printKitchenToken(tableName, guestName, items) {
             justify-content: space-between;
             margin-bottom: 3px;
           }
-          table {
-            width: 100%;
-            border-collapse: collapse;
-          }
           @media print {
             .kot-page {
               border: none;
@@ -3248,7 +3336,7 @@ function printKitchenToken(tableName, guestName, items) {
         </style>
       </head>
       <body>
-        ${categoriesHTML}
+        ${kotHtml}
         <script>
           window.onload = function() {
             window.print();

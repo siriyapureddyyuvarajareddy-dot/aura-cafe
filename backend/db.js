@@ -522,7 +522,51 @@ async function initDb() {
       ['Orange', 'Fresh Fruit Juices', 69.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
       ['Apple', 'Fresh Fruit Juices', 90.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
       ['Grapes', 'Fresh Fruit Juices', 49.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
-      
+
+      // MILK
+      ['Tea', 'Milk', 15.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Coffee', 'Milk', 20.00, 'None', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93'],
+      ['Lemon Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1555597673-b21d5c935865'],
+      ['Sonti Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Green Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Badam Milk', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Boost', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Horlics', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Ginger Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+
+      // FRIED CHICKEN ITEMS
+      ['Chicken strips 4pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Chicken wings 4pcs', 'Fried Chicken Items', 120.00, 'None', 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec'],
+      ['Chicken cheesy shorts 6 pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Chicken popcorn', 'Fried Chicken Items', 89.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Chicken nuggets 8pcs', 'Fried Chicken Items', 89.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Peri peri chicken loaded', 'Fried Chicken Items', 139.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Fish finger 5pcs', 'Fried Chicken Items', 149.00, 'None', 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec'],
+      ['Krunchy Fried chicken 1pc', 'Fried Chicken Items', 60.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Krunchy Fried chicken 2pc', 'Fried Chicken Items', 110.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Krunchy fried chicken bucket 12pcs', 'Fried Chicken Items', 669.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+
+      // FRUIT BOWLS
+      ['Classic Fruit Bowl', 'Fruit Bowls', 55.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+      ['Premium Fruit Bowl', 'Fruit Bowls', 99.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+      ['Fruit Bowl with ICE Cream', 'Fruit Bowls', 79.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+      ['Premium Fruit Bowl with ICE cream Nuts', 'Fruit Bowls', 119.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+
+      // SAMOSA
+      ['Corn Somosa ( 4 Pices)', 'Samosa', 59.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+      ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+      ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+
+      // SANDWICH
+      ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Veg Sandwich', 'Sandwich', 59.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Mixed Veg Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Mushroom Sandwich', 'Sandwich', 89.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Cheesy Chicken Sandwich', 'Sandwich', 139.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+
       // Test suite required items (for public_orders_test.js and room_service_test.js compatibility)
       ['Veg Biryani', 'Biryani', 250.00, 'None', 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8'],
       ['Tomato Soup', 'Soups', 120.00, 'None', 'https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg'],
@@ -678,6 +722,64 @@ async function initDb() {
     FROM hotel_restaurant_table_booking_menu
     WHERE id NOT IN (SELECT booking_id FROM payments)
   `);
+
+  // Incremental seed check for new items (ensures existing Turso databases get the updates)
+  const newMenuItems = [
+    // MILK
+    ['Tea', 'Milk', 15.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Coffee', 'Milk', 20.00, 'None', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93'],
+    ['Lemon Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1555597673-b21d5c935865'],
+    ['Sonti Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Green Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Badam Milk', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Boost', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Horlics', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Ginger Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+
+    // FRIED CHICKEN ITEMS
+    ['Chicken strips 4pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Chicken wings 4pcs', 'Fried Chicken Items', 120.00, 'None', 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec'],
+    ['Chicken cheesy shorts 6 pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Chicken popcorn', 'Fried Chicken Items', 89.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Chicken nuggets 8pcs', 'Fried Chicken Items', 89.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Peri peri chicken loaded', 'Fried Chicken Items', 139.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Fish finger 5pcs', 'Fried Chicken Items', 149.00, 'None', 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec'],
+    ['Krunchy Fried chicken 1pc', 'Fried Chicken Items', 60.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Krunchy Fried chicken 2pc', 'Fried Chicken Items', 110.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Krunchy fried chicken bucket 12pcs', 'Fried Chicken Items', 669.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+
+    // FRUIT BOWLS
+    ['Classic Fruit Bowl', 'Fruit Bowls', 55.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+    ['Premium Fruit Bowl', 'Fruit Bowls', 99.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+    ['Fruit Bowl with ICE Cream', 'Fruit Bowls', 79.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+    ['Premium Fruit Bowl with ICE cream Nuts', 'Fruit Bowls', 119.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+
+    // SAMOSA
+    ['Corn Somosa ( 4 Pices)', 'Samosa', 59.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+    ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+    ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+
+    // SANDWICH
+    ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Veg Sandwich', 'Sandwich', 59.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Mixed Veg Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Mushroom Sandwich', 'Sandwich', 89.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Cheesy Chicken Sandwich', 'Sandwich', 139.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569']
+  ];
+
+  for (let item of newMenuItems) {
+    const existing = await dbQuery.get('SELECT id FROM menu_items WHERE name = ?', [item[0]]);
+    if (!existing) {
+      await dbQuery.run(
+        'INSERT INTO menu_items (name, category, price, dietary_tags, image_url) VALUES (?, ?, ?, ?, ?)',
+        item
+      );
+    }
+  }
+  console.log('Incremental menu checks finished.');
 
 }
 
