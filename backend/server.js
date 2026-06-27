@@ -599,14 +599,15 @@ app.get('/api/bookings', async (req, res) => {
 app.get('/api/bookings/:id', async (req, res) => {
   try {
     const bookingId = parseInt(req.params.id, 10);
-    const booking = await dbQuery.get('SELECT * FROM hotel_restaurant_table_booking_menu WHERE id = ?', [bookingId]);
+    const [booking, orders, payment] = await Promise.all([
+      dbQuery.get('SELECT * FROM hotel_restaurant_table_booking_menu WHERE id = ?', [bookingId]),
+      dbQuery.all('SELECT * FROM orders WHERE booking_id = ?', [bookingId]),
+      dbQuery.get('SELECT * FROM payments WHERE booking_id = ?', [bookingId])
+    ]);
     
     if (!booking) {
       return res.status(404).json({ success: false, message: 'Booking not found.' });
     }
-
-    const orders = await dbQuery.all('SELECT * FROM orders WHERE booking_id = ?', [bookingId]);
-    const payment = await dbQuery.get('SELECT * FROM payments WHERE booking_id = ?', [bookingId]);
 
     if (payment && payment.status === 'Paid') {
       const seqRow = await dbQuery.get(
@@ -1012,18 +1013,31 @@ app.get('/api/reports/summary', async (req, res) => {
       "SELECT * FROM hotel_restaurant_table_booking_menu WHERE status = 'Active'"
     );
     const alertsList = [];
-    for (const b of activeBookings) {
-      const bOrders = await dbQuery.all('SELECT * FROM orders WHERE booking_id = ?', [b.id]);
-      const bPayment = await dbQuery.get('SELECT * FROM payments WHERE booking_id = ?', [b.id]);
-      const bAlerts = evaluateAlerts(b, bOrders, bPayment);
-      if (bAlerts.length > 0) {
-        alertsList.push({
-          bookingId: b.id,
-          guestName: b.guest_name,
-          tableNumber: b.table_number,
-          roomNumber: b.room_number,
-          alerts: bAlerts
-        });
+    if (activeBookings.length > 0) {
+      const bookingIds = activeBookings.map(b => b.id);
+      
+      const allOrders = await dbQuery.all(
+        `SELECT * FROM orders WHERE booking_id IN (${bookingIds.map(() => '?').join(',')})`,
+        bookingIds
+      );
+      const allPayments = await dbQuery.all(
+        `SELECT * FROM payments WHERE booking_id IN (${bookingIds.map(() => '?').join(',')})`,
+        bookingIds
+      );
+      
+      for (const b of activeBookings) {
+        const bOrders = allOrders.filter(o => o.booking_id === b.id);
+        const bPayment = allPayments.find(p => p.booking_id === b.id);
+        const bAlerts = evaluateAlerts(b, bOrders, bPayment);
+        if (bAlerts.length > 0) {
+          alertsList.push({
+            bookingId: b.id,
+            guestName: b.guest_name,
+            tableNumber: b.table_number,
+            roomNumber: b.room_number,
+            alerts: bAlerts
+          });
+        }
       }
     }
 
