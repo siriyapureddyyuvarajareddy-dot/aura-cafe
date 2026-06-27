@@ -1508,21 +1508,21 @@ body:not(.logged-out) .login-screen-container {
   }
   body.printing-receipt table th:nth-child(1),
   body.printing-receipt table td:nth-child(1) {
-    width: 40% !important;
+    width: 50% !important;
   }
   body.printing-receipt table th:nth-child(2),
   body.printing-receipt table td:nth-child(2) {
-    width: 12% !important;
+    width: 10% !important;
     text-align: center !important;
   }
   body.printing-receipt table th:nth-child(3),
   body.printing-receipt table td:nth-child(3) {
-    width: 24% !important;
+    width: 20% !important;
     text-align: right !important;
   }
   body.printing-receipt table th:nth-child(4),
   body.printing-receipt table td:nth-child(4) {
-    width: 24% !important;
+    width: 20% !important;
     text-align: right !important;
   }
 
