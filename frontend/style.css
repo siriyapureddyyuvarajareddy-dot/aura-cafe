@@ -1430,7 +1430,7 @@ body:not(.logged-out) .login-screen-container {
 @media print {
   /* Reset document for clean printing on thermal receipt rolls (like 58mm / 80mm) */
   @page {
-    margin: 2mm 0 2mm 0 !important;
+    margin: 0 !important; /* Zero margins to maximize printable width on 58mm rolls */
     size: auto;
   }
   
@@ -1487,12 +1487,12 @@ body:not(.logged-out) .login-screen-container {
   }
 
   body.printing-receipt #modal-detail .modal-content {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 58mm !important; /* Force to 58mm paper width for MPT-II thermal printer */
+    max-width: 58mm !important;
     border: none !important;
     background: #ffffff !important;
     box-shadow: none !important;
-    padding: 0 4px !important;
+    padding: 0 !important;
     margin: 0 !important;
     overflow: visible !important;
     max-height: none !important;
@@ -1540,9 +1540,12 @@ body:not(.logged-out) .login-screen-container {
   body.printing-receipt .receipt-card {
     border: none !important;
     background: transparent !important;
-    padding: 0 !important;
+    padding: 0 2px !important; /* Small side padding to prevent cutoff */
     color: #000000 !important;
     box-shadow: none !important;
+    width: 100% !important;
+    font-family: 'Courier New', Courier, monospace !important; /* Monospace print layout */
+    font-size: 11px !important; /* Optimized small font size for 58mm rolls */
   }
 
   /* Optimize print elements inside receipt */
