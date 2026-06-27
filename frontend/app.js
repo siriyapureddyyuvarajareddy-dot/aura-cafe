@@ -2806,6 +2806,43 @@ async function loadReports() {
       }
     }
 
+    // 3. Populate item sales breakdown table
+    const itemsTableBody = document.getElementById('revenue-items-table-body');
+    if (itemsTableBody) {
+      itemsTableBody.innerHTML = '';
+      
+      const itemsSold = summary.targetItemsSold || [];
+      if (itemsSold.length === 0) {
+        itemsTableBody.innerHTML = `
+          <tr>
+            <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 30px; font-size: 0.9rem;">
+              No items sold on this date.
+            </td>
+          </tr>
+        `;
+      } else {
+        itemsSold.forEach((item, index) => {
+          const row = document.createElement('tr');
+          row.style.borderBottom = '1px solid var(--border-glass)';
+          
+          const rank = index + 1;
+          const priceFormatted = `₹${parseFloat(item.price).toFixed(2)}`;
+          const totalAmount = item.price * item.quantity_sold;
+          const totalAmountFormatted = `₹${totalAmount.toFixed(2)}`;
+          
+          row.innerHTML = `
+            <td style="padding: 12px; text-align: center; font-weight: 600; color: var(--primary);">${rank}</td>
+            <td style="padding: 12px; font-weight: 500; color: var(--text-main);">${item.item_name}</td>
+            <td style="padding: 12px;">${item.category}</td>
+            <td style="padding: 12px; text-align: right;">${priceFormatted}</td>
+            <td style="padding: 12px; text-align: center; font-weight: 600;">${item.quantity_sold}</td>
+            <td style="padding: 12px; text-align: right; font-weight: 600; color: var(--text-main);">${totalAmountFormatted}</td>
+          `;
+          itemsTableBody.appendChild(row);
+        });
+      }
+    }
+
     await loadFeedbackReports();
   } catch (err) {
     console.error('Error loading reports daily revenue stats:', err);

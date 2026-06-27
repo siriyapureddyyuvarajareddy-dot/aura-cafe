@@ -5,7 +5,7 @@
   "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "test": "node tests/run_tests.js && node tests/public_orders_test.js && node tests/room_service_test.js"
+    "test": "node -e \"const fs = require('fs'); try { fs.unlinkSync('backend/test_aura_cafe.db'); } catch (e) {}\" && node tests/run_tests.js && node tests/public_orders_test.js && node tests/room_service_test.js"
   },
   "dependencies": {
     "@libsql/client": "^0.17.4",

@@ -988,6 +988,17 @@ app.get('/api/reports/summary', async (req, res) => {
       [targetDate]
     );
 
+    // Item sales breakdown for targetDate (most to least)
+    const targetItemsSold = await dbQuery.all(
+      `SELECT o.item_name, SUM(o.quantity) as quantity_sold, o.price, o.category
+       FROM orders o
+       JOIN hotel_restaurant_table_booking_menu b ON o.booking_id = b.id
+       WHERE b.booking_date = ? AND o.status != 'Cancelled' AND b.status != 'Cancelled'
+       GROUP BY o.item_name, o.price, o.category
+       ORDER BY quantity_sold DESC`,
+      [targetDate]
+    );
+
     // 3. Table Occupancy Rate today
     const todayBookingsCount = await dbQuery.get(
       "SELECT COUNT(DISTINCT table_number) as occupied FROM hotel_restaurant_table_booking_menu WHERE booking_date <= ? AND status = 'Active'",
@@ -1068,7 +1079,8 @@ app.get('/api/reports/summary', async (req, res) => {
         card: parseFloat((targetStats ? targetStats.card : 0).toFixed(2)),
         roomCharge: parseFloat((targetStats ? targetStats.roomCharge : 0).toFixed(2))
       },
-      targetTransactions
+      targetTransactions,
+      targetItemsSold
     });
   } catch (err) {
     res.status(500).json({ success: false, message: 'Server error generating reports summary', error: err.message });
