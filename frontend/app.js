@@ -1522,7 +1522,6 @@ async function renderLiveTableMap() {
         tableDiv.className = hasOrders ? 'restaurant-table running' : 'restaurant-table occupied';
         tableDiv.innerHTML = `
           <div class="table-num">T-${tNum}</div>
-          <div class="table-capacity">Cap: ${tableCapacities[tNum]}</div>
           <span class="table-status-pill">${hasOrders ? 'Running' : 'Reserved'}</span>
           <div style="font-size:0.75rem; text-align:center; margin-top:4px; font-weight:600; color:var(--text-muted);">${formatTime12H(isOccupied.booking_time)}</div>
         `;
@@ -1531,7 +1530,6 @@ async function renderLiveTableMap() {
         tableDiv.className = 'restaurant-table available';
         tableDiv.innerHTML = `
           <div class="table-num">T-${tNum}</div>
-          <div class="table-capacity">Cap: ${tableCapacities[tNum]}</div>
           <span class="table-status-pill">Available</span>
         `;
         tableDiv.onclick = () => {

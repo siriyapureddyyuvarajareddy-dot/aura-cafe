@@ -20,11 +20,10 @@ function getTableCapacity(tableNumber) {
 }
 
 /**
- * Validates if guest count exceeds table capacity
+ * Validates if guest count exceeds table capacity (always returns true as table capacity limits are removed)
  */
 function validateTableCapacity(tableNumber, guestCount) {
-  const capacity = getTableCapacity(tableNumber);
-  return guestCount <= capacity;
+  return true;
 }
 
 /**

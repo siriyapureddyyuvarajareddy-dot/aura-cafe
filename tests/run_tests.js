@@ -57,14 +57,14 @@ async function runTests() {
   test('Table 2 capacity validation (2 guests) - Should Pass', () => {
     assert.strictEqual(validateTableCapacity(2, 2), true);
   });
-  test('Table 2 capacity validation (3 guests) - Should Fail', () => {
-    assert.strictEqual(validateTableCapacity(2, 3), false);
+  test('Table 2 capacity validation (3 guests) - Should Pass under no capacity limit', () => {
+    assert.strictEqual(validateTableCapacity(2, 3), true);
   });
   test('Table 8 capacity validation (6 guests) - Should Pass', () => {
     assert.strictEqual(validateTableCapacity(8, 6), true);
   });
-  test('Table 8 capacity validation (7 guests) - Should Fail', () => {
-    assert.strictEqual(validateTableCapacity(8, 7), false);
+  test('Table 8 capacity validation (7 guests) - Should Pass under no capacity limit', () => {
+    assert.strictEqual(validateTableCapacity(8, 7), true);
   });
 
   // ----------------------------------------------------
@@ -367,9 +367,9 @@ async function runTests() {
     assert.ok(bookingFailData.message.includes('overlaps') || bookingFailData.message.includes('already booked'));
     console.log('[PASS] API POST /api/bookings Double Booking Overlap Blocked');
 
-    // API Test 4: POST /api/bookings (Exceed table capacity - Should fail)
-    // Table 1 capacity is 2. Attempt to book for 4.
-    const capacityFailRes = await fetch('http://localhost:3001/api/bookings', {
+    // API Test 4: POST /api/bookings (Exceed traditional table capacity - Should succeed now)
+    // Table 1 traditional capacity is 2. Attempt to book for 4.
+    const capacityPassRes = await fetch('http://localhost:3001/api/bookings', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
@@ -384,11 +384,10 @@ async function runTests() {
         guest_count: 4
       })
     });
-    const capacityFailData = await capacityFailRes.json();
-    assert.strictEqual(capacityFailRes.status, 400);
-    assert.strictEqual(capacityFailData.success, false);
-    assert.ok(capacityFailData.message.includes('capacity'));
-    console.log('[PASS] API POST /api/bookings Table Capacity Overrun Blocked');
+    const capacityPassData = await capacityPassRes.json();
+    assert.strictEqual(capacityPassRes.status, 214);
+    assert.strictEqual(capacityPassData.success, true);
+    console.log('[PASS] API POST /api/bookings Table Capacity Overrun Allowed');
     
     // API Test 5: GET /api/payments/history (Succeeds and returns payment records)
     const historyRes = await fetch('http://localhost:3001/api/payments/history', {

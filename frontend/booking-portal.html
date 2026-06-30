@@ -413,7 +413,7 @@
             <div class="form-group-row">
               <div class="form-group">
                 <label for="guest_count">Party Size</label>
-                <input type="number" id="guest_count" class="form-input" required min="1" max="8" value="2" oninput="handlePartySizeChange()">
+                <input type="number" id="guest_count" class="form-input" required min="1" value="2" oninput="handlePartySizeChange()">
               </div>
               <div class="form-group">
                 <label for="room_number">Room Number (Optional)</label>
@@ -532,24 +532,15 @@
      */
     function handlePartySizeChange() {
       const guestCount = parseInt(document.getElementById('guest_count').value, 10);
-      if (guestCount < 1 || guestCount > 8) return;
+      if (guestCount < 1) return;
       
       const selectedTableInput = document.getElementById('selected_table');
       const selectedTableId = parseInt(selectedTableInput.value, 10);
 
-      // Auto check cards
+      // Auto check cards (all tables are always shown now since capacity limit is removed)
       const cards = document.querySelectorAll('.table-card');
       cards.forEach(card => {
-        const capacity = parseInt(card.dataset.seats, 10);
-        if (capacity < guestCount) {
-          card.style.display = 'none';
-          if (selectedTableId === parseInt(card.dataset.id, 10)) {
-            selectedTableInput.value = '';
-            card.classList.remove('selected');
-          }
-        } else {
-          card.style.display = 'block';
-        }
+        card.style.display = 'block';
       });
       validateSubmitButton();
     }
