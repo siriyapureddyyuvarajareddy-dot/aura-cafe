@@ -525,7 +525,7 @@ async function initDb() {
 
       // MILK
       ['Tea', 'Milk', 15.00, 'None', 'images/tea.png'],
-      ['Coffee', 'Milk', 20.00, 'None', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93'],
+      ['Coffee', 'Milk', 20.00, 'None', 'images/coffee.png'],
       ['Lemon Tea', 'Milk', 25.00, 'None', 'images/lemon_tea.png'],
       ['Sonti Tea', 'Milk', 25.00, 'None', 'images/sonti_tea.png'],
       ['Green Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
@@ -572,7 +572,7 @@ async function initDb() {
       ['Tomato Soup', 'Soups', 120.00, 'None', 'https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg'],
       ['Gulab Jamun', 'Desserts', 90.00, 'None', 'https://i.pinimg.com/736x/30/6e/ac/306eac21d95c385ed486ea5da524b8a5.jpg'],
       ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'images/waterbottle.png'],
-      ['Water bottle', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+      ['Water bottle', 'Soft Drinks', 10.00, 'None', 'images/water_bottle.png'],
       ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'images/thumbsup.png'],
       ['Sprite', 'Soft Drinks', 20.00, 'None', 'images/sprite.png'],
       ['Pulpy', 'Soft Drinks', 25.00, 'None', 'images/pulpy.png'],
@@ -734,7 +734,7 @@ async function initDb() {
   const newMenuItems = [
     // MILK
     ['Tea', 'Milk', 15.00, 'None', 'images/tea.png'],
-    ['Coffee', 'Milk', 20.00, 'None', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93'],
+    ['Coffee', 'Milk', 20.00, 'None', 'images/coffee.png'],
     ['Lemon Tea', 'Milk', 25.00, 'None', 'images/lemon_tea.png'],
     ['Sonti Tea', 'Milk', 25.00, 'None', 'images/sonti_tea.png'],
     ['Green Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
@@ -776,7 +776,7 @@ async function initDb() {
     ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/peri_peri_chicken_sandwich.png'],
     ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/crispy_chicken_sandwich.png'],
     ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'images/waterbottle.png'],
-    ['Water bottle', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+    ['Water bottle', 'Soft Drinks', 10.00, 'None', 'images/water_bottle.png'],
     ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'images/thumbsup.png'],
     ['Sprite', 'Soft Drinks', 20.00, 'None', 'images/sprite.png'],
     ['Pulpy', 'Soft Drinks', 25.00, 'None', 'images/pulpy.png'],
@@ -1363,6 +1363,16 @@ async function initDb() {
   // Update Maaza image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/maaza.png' WHERE name = 'Maaza'"
+  );
+
+  // Update Coffee image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/coffee.png' WHERE name = 'Coffee'"
+  );
+
+  // Update Water bottle image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/water_bottle.png' WHERE name = 'Water bottle'"
   );
 
   // Force all items to be in stock forever in production/dev
