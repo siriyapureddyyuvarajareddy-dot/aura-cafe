@@ -571,13 +571,13 @@ async function initDb() {
       ['Veg Biryani', 'Biryani', 250.00, 'None', 'images/veg_biryani.png'],
       ['Tomato Soup', 'Soups', 120.00, 'None', 'https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg'],
       ['Gulab Jamun', 'Desserts', 90.00, 'None', 'https://i.pinimg.com/736x/30/6e/ac/306eac21d95c385ed486ea5da524b8a5.jpg'],
-      ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+      ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'images/waterbottle.png'],
       ['Water bottle', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
-      ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-      ['Sprite', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-      ['Pulpy', 'Soft Drinks', 25.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+      ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'images/thumbsup.png'],
+      ['Sprite', 'Soft Drinks', 20.00, 'None', 'images/sprite.png'],
+      ['Pulpy', 'Soft Drinks', 25.00, 'None', 'images/pulpy.png'],
       ['Coke', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-      ['Maaza', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97']
+      ['Maaza', 'Soft Drinks', 20.00, 'None', 'images/maaza.png']
     ];
 
     for (let item of items) {
@@ -775,13 +775,13 @@ async function initDb() {
     ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/tandoori_chicken_sandwich.png'],
     ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/peri_peri_chicken_sandwich.png'],
     ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/crispy_chicken_sandwich.png'],
-    ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+    ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'images/waterbottle.png'],
     ['Water bottle', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
-    ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-    ['Sprite', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-    ['Pulpy', 'Soft Drinks', 25.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+    ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'images/thumbsup.png'],
+    ['Sprite', 'Soft Drinks', 20.00, 'None', 'images/sprite.png'],
+    ['Pulpy', 'Soft Drinks', 25.00, 'None', 'images/pulpy.png'],
     ['Coke', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-    ['Maaza', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97']
+    ['Maaza', 'Soft Drinks', 20.00, 'None', 'images/maaza.png']
   ];
 
   for (let item of newMenuItems) {
@@ -1338,6 +1338,31 @@ async function initDb() {
   // Update Peri Peri Chicken Sandwich image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/peri_peri_chicken_sandwich.png' WHERE name = 'Peri Peri Chicken Sandwich'"
+  );
+
+  // Update Waterbottle image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/waterbottle.png' WHERE name = 'Waterbottle'"
+  );
+
+  // Update Thumbsup image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/thumbsup.png' WHERE name = 'Thumbsup'"
+  );
+
+  // Update Sprite image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/sprite.png' WHERE name = 'Sprite'"
+  );
+
+  // Update Pulpy image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/pulpy.png' WHERE name = 'Pulpy'"
+  );
+
+  // Update Maaza image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/maaza.png' WHERE name = 'Maaza'"
   );
 
   // Force all items to be in stock forever in production/dev
