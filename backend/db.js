@@ -416,7 +416,7 @@ async function initDb() {
       ['Crispy Chicken Burger', 'Non-Veg Burgers', 119.00, 'None', 'https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b'],
       ['BBQ Chicken Burger', 'Non-Veg Burgers', 129.00, 'None', 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd'],
       ['Chicken Smash Burger', 'Non-Veg Burgers', 139.00, 'None', 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5'],
-      ['Chicken Mini Burger 8 Pic', 'Non-Veg Burgers', 99.00, 'None', 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd'],
+      ['Chicken Mini Burger 8 Pic', 'Non-Veg Burgers', 99.00, 'None', 'images/chicken_mini_burger_8pic.png'],
 
       // FRIED VEG
       ['French Fries', 'Fried Veg', 69.00, 'None', 'https://images.unsplash.com/photo-1576107232684-1279f390859f'],
@@ -789,6 +789,11 @@ async function initDb() {
   // Update Veg Mini Burger 8Pic image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/veg_mini_burger_8pic.png' WHERE name = 'Veg Mini Burger 8Pic'"
+  );
+
+  // Update Chicken Mini Burger 8 Pic image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_mini_burger_8pic.png' WHERE name = 'Chicken Mini Burger 8 Pic'"
   );
 
 }
