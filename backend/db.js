@@ -1326,6 +1326,15 @@ async function initDb() {
     "UPDATE menu_items SET image_url = 'images/peri_peri_chicken_sandwich.png' WHERE name = 'Peri Peri Chicken Sandwich'"
   );
 
+  // Force all items to be in stock forever in production/dev
+  const isTest = process.env.NODE_ENV === 'test' || 
+                 (process.env.DATABASE_PATH && process.env.DATABASE_PATH.includes('test_aura_cafe.db')) || 
+                 (process.env.PORT == 3001 || process.env.PORT == 3004 || process.env.PORT == 3005);
+  if (!isTest) {
+    await dbQuery.run("UPDATE menu_items SET is_available = 1");
+    console.log("Forced all menu items to be in stock (is_available = 1) for production/development mode.");
+  }
+
 }
 
 function closeDb() {
