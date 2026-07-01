@@ -553,19 +553,19 @@ async function initDb() {
       ['Premium Fruit Bowl with ICE cream Nuts', 'Fruit Bowls', 119.00, 'None', 'images/premium_fruit_bowl_with_ice_cream_nuts.png'],
 
       // SAMOSA
-      ['Corn Somosa ( 4 Pices)', 'Samosa', 59.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
-      ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
-      ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+      ['Corn Somosa ( 4 Pices)', 'Samosa', 59.00, 'None', 'images/corn_samosa.png'],
+      ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'images/paneer_samosa.png'],
+      ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'images/chicken_samosa.png'],
 
       // SANDWICH
       ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
       ['Veg Sandwich', 'Sandwich', 59.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
       ['Mixed Veg Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
       ['Mushroom Sandwich', 'Sandwich', 89.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-      ['Cheesy Chicken Sandwich', 'Sandwich', 139.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Cheesy Chicken Sandwich', 'Sandwich', 139.00, 'None', 'images/cheesy_chicken_sandwich.png'],
       ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
       ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-      ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/crispy_chicken_sandwich.png'],
 
       // Test suite required items (for public_orders_test.js and room_service_test.js compatibility)
       ['Veg Biryani', 'Biryani', 250.00, 'None', 'images/veg_biryani.png'],
@@ -755,19 +755,19 @@ async function initDb() {
     ['Premium Fruit Bowl with ICE cream Nuts', 'Fruit Bowls', 119.00, 'None', 'images/premium_fruit_bowl_with_ice_cream_nuts.png'],
 
     // SAMOSA
-    ['Corn Somosa ( 4 Pices)', 'Samosa', 59.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
-    ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
-    ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+    ['Corn Somosa ( 4 Pices)', 'Samosa', 59.00, 'None', 'images/corn_samosa.png'],
+    ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'images/paneer_samosa.png'],
+    ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'images/chicken_samosa.png'],
 
     // SANDWICH
     ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
     ['Veg Sandwich', 'Sandwich', 59.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
     ['Mixed Veg Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
     ['Mushroom Sandwich', 'Sandwich', 89.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-    ['Cheesy Chicken Sandwich', 'Sandwich', 139.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Cheesy Chicken Sandwich', 'Sandwich', 139.00, 'None', 'images/cheesy_chicken_sandwich.png'],
     ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
     ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-    ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569']
+    ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/crispy_chicken_sandwich.png']
   ];
 
   for (let item of newMenuItems) {
@@ -1274,6 +1274,31 @@ async function initDb() {
   // Update Premium Fruit Bowl with ICE cream Nuts image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/premium_fruit_bowl_with_ice_cream_nuts.png' WHERE name = 'Premium Fruit Bowl with ICE cream Nuts'"
+  );
+
+  // Update Corn Somosa ( 4 Pices) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/corn_samosa.png' WHERE name = 'Corn Somosa ( 4 Pices)'"
+  );
+
+  // Update Paneer Somosa (4 Pices) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/paneer_samosa.png' WHERE name = 'Paneer Somosa (4 Pices)'"
+  );
+
+  // Update Chicken Somosa ( 4 Pices) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_samosa.png' WHERE name = 'Chicken Somosa ( 4 Pices)'"
+  );
+
+  // Update Cheesy Chicken Sandwich image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/cheesy_chicken_sandwich.png' WHERE name = 'Cheesy Chicken Sandwich'"
+  );
+
+  // Update Crispy Chicken Sandwich image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/crispy_chicken_sandwich.png' WHERE name = 'Crispy Chicken Sandwich'"
   );
 
 }
