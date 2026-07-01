@@ -465,10 +465,10 @@ async function initDb() {
       ['Ghee Rice', 'Fried Rice', 79.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
 
       // FRIED RICE NON-VEG
-      ['Chicken Fried Rice (Normal)', 'Fried Rice', 120.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
-      ['Chicken Fried Rice (Schezwan)', 'Fried Rice', 140.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
-      ['Chicken Keema Rice (Normal)', 'Fried Rice', 119.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
-      ['Chicken Keema Rice (Schezwan)', 'Fried Rice', 119.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
+      ['Chicken Fried Rice (Normal)', 'Fried Rice', 120.00, 'None', 'images/chicken_fried_rice_normal.png'],
+      ['Chicken Fried Rice (Schezwan)', 'Fried Rice', 140.00, 'None', 'images/chicken_fried_rice_schezwan.png'],
+      ['Chicken Keema Rice (Normal)', 'Fried Rice', 119.00, 'None', 'images/chicken_keema_rice_normal.png'],
+      ['Chicken Keema Rice (Schezwan)', 'Fried Rice', 119.00, 'None', 'images/chicken_keema_rice_schezwan.png'],
       ['Egg Rice (Normal)', 'Fried Rice', 100.00, 'None', 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc'],
       ['Egg Rice (Schezwan)', 'Fried Rice', 120.00, 'None', 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc'],
       ['Prawns Rice (Normal)', 'Fried Rice', 150.00, 'None', 'https://images.unsplash.com/photo-1565557623262-b51c2513a641'],
@@ -924,6 +924,26 @@ async function initDb() {
   // Update Veg Biryani image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/veg_biryani.png' WHERE name = 'Veg Biryani'"
+  );
+
+  // Update Chicken Fried Rice (Normal) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_fried_rice_normal.png' WHERE name = 'Chicken Fried Rice (Normal)'"
+  );
+
+  // Update Chicken Fried Rice (Schezwan) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_fried_rice_schezwan.png' WHERE name = 'Chicken Fried Rice (Schezwan)'"
+  );
+
+  // Update Chicken Keema Rice (Normal) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_keema_rice_normal.png' WHERE name = 'Chicken Keema Rice (Normal)'"
+  );
+
+  // Update Chicken Keema Rice (Schezwan) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_keema_rice_schezwan.png' WHERE name = 'Chicken Keema Rice (Schezwan)'"
   );
 
 }
