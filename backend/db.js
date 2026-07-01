@@ -788,6 +788,9 @@ async function initDb() {
     ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/crispy_chicken_sandwich.png']
   ];
 
+  // Delete old soft drink names with price suffix if they exist
+  await dbQuery.run("DELETE FROM menu_items WHERE name IN ('Waterbottle 20', 'Water bottle 10', 'Thumbsup 20', 'Sprite 20', 'Pulpy 25', 'Coke 20', 'Maaza 20')");
+
   for (let item of newMenuItems) {
     const existing = await dbQuery.get('SELECT id FROM menu_items WHERE name = ?', [item[0]]);
     if (!existing) {
@@ -1343,15 +1346,6 @@ async function initDb() {
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/peri_peri_chicken_sandwich.png' WHERE name = 'Peri Peri Chicken Sandwich'"
   );
-
-  // Clean up old soft drink names with price suffix if they exist
-  await dbQuery.run("UPDATE menu_items SET name = 'Waterbottle' WHERE name = 'Waterbottle 20'");
-  await dbQuery.run("UPDATE menu_items SET name = 'Water bottle' WHERE name = 'Water bottle 10'");
-  await dbQuery.run("UPDATE menu_items SET name = 'Thumbsup' WHERE name = 'Thumbsup 20'");
-  await dbQuery.run("UPDATE menu_items SET name = 'Sprite' WHERE name = 'Sprite 20'");
-  await dbQuery.run("UPDATE menu_items SET name = 'Pulpy' WHERE name = 'Pulpy 25'");
-  await dbQuery.run("UPDATE menu_items SET name = 'Coke' WHERE name = 'Coke 20'");
-  await dbQuery.run("UPDATE menu_items SET name = 'Maaza' WHERE name = 'Maaza 20'");
 
   // Force all items to be in stock forever in production/dev
   const isTest = process.env.NODE_ENV === 'test' || 
