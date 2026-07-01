@@ -426,14 +426,14 @@ async function initDb() {
       ['Veg Nuggets', 'Fried Veg', 79.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
 
       // VEG STARTERS
-      ['Chilli Paneer', 'Veg Starters', 79.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
-      ['Gobi 65', 'Veg Starters', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
-      ['Chilli Mushroom', 'Veg Starters', 95.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
+      ['Chilli Paneer', 'Veg Starters', 79.00, 'None', 'images/chilli_paneer.png'],
+      ['Gobi 65', 'Veg Starters', 69.00, 'None', 'images/gobi_65.png'],
+      ['Chilli Mushroom', 'Veg Starters', 95.00, 'None', 'images/chilli_mushroom.png'],
       ['Mushroom 65', 'Veg Starters', 89.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
       ['Paneer Manchurian', 'Veg Starters', 99.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
       ['Paneer 65', 'Veg Starters', 89.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
-      ['Baby Corn Starter', 'Veg Starters', 89.00, 'None', 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd'],
-      ['Gobi Manchurian', 'Veg Starters', 69.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+      ['Baby Corn Starter', 'Veg Starters', 89.00, 'None', 'images/crispy_baby_corn.jpg'],
+      ['Gobi Manchurian', 'Veg Starters', 69.00, 'None', 'images/gobi_manchurian.png'],
 
       // NON-VEG STARTERS
       ['Chicken 65', 'Non-Veg Starters', 120.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
@@ -829,6 +829,31 @@ async function initDb() {
   // Update Smiley Fries image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/smiley_fries.png' WHERE name = 'Smiley Fries'"
+  );
+
+  // Update Baby Corn Starter image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/crispy_baby_corn.jpg' WHERE name = 'Baby Corn Starter'"
+  );
+
+  // Update Chilli Mushroom image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chilli_mushroom.png' WHERE name = 'Chilli Mushroom'"
+  );
+
+  // Update Chilli Paneer image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chilli_paneer.png' WHERE name = 'Chilli Paneer'"
+  );
+
+  // Update Gobi 65 image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/gobi_65.png' WHERE name = 'Gobi 65'"
+  );
+
+  // Update Gobi Manchurian image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/gobi_manchurian.png' WHERE name = 'Gobi Manchurian'"
   );
 
 }
