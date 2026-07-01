@@ -482,7 +482,7 @@ async function initDb() {
 
       // NOODLES
       ['Veg Fried Noodles (Normal)', 'Noodles', 69.00, 'None', 'images/veg_fried_noodles_normal.png'],
-      ['Veg Fried Noodles (Schezwan)', 'Noodles', 79.00, 'None', 'https://images.unsplash.com/photo-1585032226651-759b368d7246'],
+      ['Veg Fried Noodles (Schezwan)', 'Noodles', 79.00, 'None', 'images/veg_fried_noodles_schezwan.png'],
       ['Panner Fried Noodles (Normal)', 'Noodles', 100.00, 'None', 'images/paneer_fried_noodles_normal.png'],
       ['Panner Fried Noodles (Schezwan)', 'Noodles', 110.00, 'None', 'images/paneer_fried_noodles_schezwan.png'],
       ['Mushroom Noodles (Normal)', 'Noodles', 99.00, 'None', 'images/mushroom_noodles_normal.png'],
@@ -1094,6 +1094,11 @@ async function initDb() {
   // Update Prawns Fried Noodles (Schezwan) image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/prawns_fried_noodles_schezwan.png' WHERE name = 'Prawns Fried Noodles (Schezwan)'"
+  );
+
+  // Update Veg Fried Noodles (Schezwan) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/veg_fried_noodles_schezwan.png' WHERE name = 'Veg Fried Noodles (Schezwan)'"
   );
 
 }
