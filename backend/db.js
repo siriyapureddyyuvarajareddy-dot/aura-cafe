@@ -460,17 +460,17 @@ async function initDb() {
       ['Panner Fried Rice (Schezwan)', 'Fried Rice', 110.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
       ['Mushroom Fried Rice (Normal)', 'Fried Rice', 89.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
       ['Mushroom Fried Rice (Schezwan)', 'Fried Rice', 99.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
-      ['Mixed Veg Fried Rice (Normal)', 'Fried Rice', 120.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
-      ['Mixed Veg Fried Rice (Schezwan)', 'Fried Rice', 140.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
-      ['Ghee Rice', 'Fried Rice', 79.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
+      ['Mixed Veg Fried Rice (Normal)', 'Fried Rice', 120.00, 'None', 'images/mixed_veg_fried_rice_normal.png'],
+      ['Mixed Veg Fried Rice (Schezwan)', 'Fried Rice', 140.00, 'None', 'images/mixed_veg_fried_rice_schezwan.png'],
+      ['Ghee Rice', 'Fried Rice', 79.00, 'None', 'images/ghee_rice.png'],
 
       // FRIED RICE NON-VEG
       ['Chicken Fried Rice (Normal)', 'Fried Rice', 120.00, 'None', 'images/chicken_fried_rice_normal.png'],
       ['Chicken Fried Rice (Schezwan)', 'Fried Rice', 140.00, 'None', 'images/chicken_fried_rice_schezwan.png'],
       ['Chicken Keema Rice (Normal)', 'Fried Rice', 119.00, 'None', 'images/chicken_keema_rice_normal.png'],
       ['Chicken Keema Rice (Schezwan)', 'Fried Rice', 119.00, 'None', 'images/chicken_keema_rice_schezwan.png'],
-      ['Egg Rice (Normal)', 'Fried Rice', 100.00, 'None', 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc'],
-      ['Egg Rice (Schezwan)', 'Fried Rice', 120.00, 'None', 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc'],
+      ['Egg Rice (Normal)', 'Fried Rice', 100.00, 'None', 'images/egg_rice_normal.png'],
+      ['Egg Rice (Schezwan)', 'Fried Rice', 120.00, 'None', 'images/egg_rice_schezwan.png'],
       ['Prawns Rice (Normal)', 'Fried Rice', 150.00, 'None', 'https://images.unsplash.com/photo-1565557623262-b51c2513a641'],
       ['Prawns Rice (Schezwan)', 'Fried Rice', 170.00, 'None', 'https://images.unsplash.com/photo-1565557623262-b51c2513a641'],
 
@@ -944,6 +944,31 @@ async function initDb() {
   // Update Chicken Keema Rice (Schezwan) image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/chicken_keema_rice_schezwan.png' WHERE name = 'Chicken Keema Rice (Schezwan)'"
+  );
+
+  // Update Mixed Veg Fried Rice (Normal) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/mixed_veg_fried_rice_normal.png' WHERE name = 'Mixed Veg Fried Rice (Normal)'"
+  );
+
+  // Update Mixed Veg Fried Rice (Schezwan) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/mixed_veg_fried_rice_schezwan.png' WHERE name = 'Mixed Veg Fried Rice (Schezwan)'"
+  );
+
+  // Update Ghee Rice image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/ghee_rice.png' WHERE name = 'Ghee Rice'"
+  );
+
+  // Update Egg Rice (Normal) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/egg_rice_normal.png' WHERE name = 'Egg Rice (Normal)'"
+  );
+
+  // Update Egg Rice (Schezwan) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/egg_rice_schezwan.png' WHERE name = 'Egg Rice (Schezwan)'"
   );
 
 }
