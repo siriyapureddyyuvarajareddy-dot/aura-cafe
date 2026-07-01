@@ -403,7 +403,7 @@ async function initDb() {
       // VEG BURGERS
       ['Crispy Veg Burger', 'Veg Burgers', 99.00, 'None', 'images/crispy_veg_burger.png'],
       ['Paneer Burger', 'Veg Burgers', 119.00, 'None', 'https://images.unsplash.com/photo-1525059696034-4967a8e1dca2'],
-      ['Veg Mini Burger 8Pic', 'Veg Burgers', 79.00, 'None', 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd'],
+      ['Veg Mini Burger 8Pic', 'Veg Burgers', 79.00, 'None', 'images/veg_mini_burger_8pic.png'],
 
       // EGG
       ['Plain Egg', 'Egg Items', 29.00, 'None', 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc'],
@@ -784,6 +784,11 @@ async function initDb() {
   // Update Crispy Veg Burger image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/crispy_veg_burger.png' WHERE name = 'Crispy Veg Burger'"
+  );
+
+  // Update Veg Mini Burger 8Pic image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/veg_mini_burger_8pic.png' WHERE name = 'Veg Mini Burger 8Pic'"
   );
 
 }
