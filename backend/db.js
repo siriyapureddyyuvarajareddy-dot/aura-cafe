@@ -540,17 +540,17 @@ async function initDb() {
       ['Chicken cheesy shorts 6 pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
       ['Chicken popcorn', 'Fried Chicken Items', 89.00, 'None', 'images/chicken_popcorn.png'],
       ['Chicken nuggets 8pcs', 'Fried Chicken Items', 89.00, 'None', 'images/chicken_nuggets.png'],
-      ['Peri peri chicken loaded', 'Fried Chicken Items', 139.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Peri peri chicken loaded', 'Fried Chicken Items', 139.00, 'None', 'images/peri_peri_chicken_loaded.png'],
       ['Fish finger 5pcs', 'Fried Chicken Items', 149.00, 'None', 'images/fish_fingers.png'],
       ['Krunchy Fried chicken 1pc', 'Fried Chicken Items', 60.00, 'None', 'images/fried_chicken_1pc.png'],
       ['Krunchy Fried chicken 2pc', 'Fried Chicken Items', 110.00, 'None', 'images/fried_chicken_2pc.png'],
       ['Krunchy fried chicken bucket 12pcs', 'Fried Chicken Items', 669.00, 'None', 'images/fried_chicken_bucket.png'],
 
       // FRUIT BOWLS
-      ['Classic Fruit Bowl', 'Fruit Bowls', 55.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
-      ['Premium Fruit Bowl', 'Fruit Bowls', 99.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
-      ['Fruit Bowl with ICE Cream', 'Fruit Bowls', 79.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
-      ['Premium Fruit Bowl with ICE cream Nuts', 'Fruit Bowls', 119.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+      ['Classic Fruit Bowl', 'Fruit Bowls', 55.00, 'None', 'images/classic_fruit_bowl.png'],
+      ['Premium Fruit Bowl', 'Fruit Bowls', 99.00, 'None', 'images/premium_fruit_bowl.png'],
+      ['Fruit Bowl with ICE Cream', 'Fruit Bowls', 79.00, 'None', 'images/fruit_bowl_with_ice_cream.png'],
+      ['Premium Fruit Bowl with ICE cream Nuts', 'Fruit Bowls', 119.00, 'None', 'images/premium_fruit_bowl_with_ice_cream_nuts.png'],
 
       // SAMOSA
       ['Corn Somosa ( 4 Pices)', 'Samosa', 59.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
@@ -742,17 +742,17 @@ async function initDb() {
     ['Chicken cheesy shorts 6 pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
     ['Chicken popcorn', 'Fried Chicken Items', 89.00, 'None', 'images/chicken_popcorn.png'],
     ['Chicken nuggets 8pcs', 'Fried Chicken Items', 89.00, 'None', 'images/chicken_nuggets.png'],
-    ['Peri peri chicken loaded', 'Fried Chicken Items', 139.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Peri peri chicken loaded', 'Fried Chicken Items', 139.00, 'None', 'images/peri_peri_chicken_loaded.png'],
     ['Fish finger 5pcs', 'Fried Chicken Items', 149.00, 'None', 'images/fish_fingers.png'],
     ['Krunchy Fried chicken 1pc', 'Fried Chicken Items', 60.00, 'None', 'images/fried_chicken_1pc.png'],
     ['Krunchy Fried chicken 2pc', 'Fried Chicken Items', 110.00, 'None', 'images/fried_chicken_2pc.png'],
     ['Krunchy fried chicken bucket 12pcs', 'Fried Chicken Items', 669.00, 'None', 'images/fried_chicken_bucket.png'],
 
     // FRUIT BOWLS
-    ['Classic Fruit Bowl', 'Fruit Bowls', 55.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
-    ['Premium Fruit Bowl', 'Fruit Bowls', 99.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
-    ['Fruit Bowl with ICE Cream', 'Fruit Bowls', 79.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
-    ['Premium Fruit Bowl with ICE cream Nuts', 'Fruit Bowls', 119.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
+    ['Classic Fruit Bowl', 'Fruit Bowls', 55.00, 'None', 'images/classic_fruit_bowl.png'],
+    ['Premium Fruit Bowl', 'Fruit Bowls', 99.00, 'None', 'images/premium_fruit_bowl.png'],
+    ['Fruit Bowl with ICE Cream', 'Fruit Bowls', 79.00, 'None', 'images/fruit_bowl_with_ice_cream.png'],
+    ['Premium Fruit Bowl with ICE cream Nuts', 'Fruit Bowls', 119.00, 'None', 'images/premium_fruit_bowl_with_ice_cream_nuts.png'],
 
     // SAMOSA
     ['Corn Somosa ( 4 Pices)', 'Samosa', 59.00, 'None', 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78'],
@@ -1249,6 +1249,31 @@ async function initDb() {
   // Update Krunchy fried chicken bucket 12pcs image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/fried_chicken_bucket.png' WHERE name = 'Krunchy fried chicken bucket 12pcs'"
+  );
+
+  // Update Peri peri chicken loaded image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/peri_peri_chicken_loaded.png' WHERE name = 'Peri peri chicken loaded'"
+  );
+
+  // Update Classic Fruit Bowl image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/classic_fruit_bowl.png' WHERE name = 'Classic Fruit Bowl'"
+  );
+
+  // Update Premium Fruit Bowl image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/premium_fruit_bowl.png' WHERE name = 'Premium Fruit Bowl'"
+  );
+
+  // Update Fruit Bowl with ICE Cream image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/fruit_bowl_with_ice_cream.png' WHERE name = 'Fruit Bowl with ICE Cream'"
+  );
+
+  // Update Premium Fruit Bowl with ICE cream Nuts image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/premium_fruit_bowl_with_ice_cream_nuts.png' WHERE name = 'Premium Fruit Bowl with ICE cream Nuts'"
   );
 
 }
