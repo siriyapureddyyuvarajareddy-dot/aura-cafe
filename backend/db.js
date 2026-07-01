@@ -485,12 +485,12 @@ async function initDb() {
       ['Veg Fried Noodles (Schezwan)', 'Noodles', 79.00, 'None', 'https://images.unsplash.com/photo-1585032226651-759b368d7246'],
       ['Panner Fried Noodles (Normal)', 'Noodles', 100.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
       ['Panner Fried Noodles (Schezwan)', 'Noodles', 110.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
-      ['Mushroom Noodles (Normal)', 'Noodles', 99.00, 'None', 'https://images.unsplash.com/photo-1585032226651-759b368d7246'],
-      ['Mushroom Noodles (Schezwan)', 'Noodles', 109.00, 'None', 'https://images.unsplash.com/photo-1585032226651-759b368d7246'],
+      ['Mushroom Noodles (Normal)', 'Noodles', 99.00, 'None', 'images/mushroom_noodles_normal.png'],
+      ['Mushroom Noodles (Schezwan)', 'Noodles', 109.00, 'None', 'images/mushroom_noodles_schezwan.png'],
       ['Gobi Fried Noodles (Normal)', 'Noodles', 79.00, 'None', 'images/gobi_fried_noodles_normal.png'],
-      ['Gobi Fried Noodles (Schezwan)', 'Noodles', 89.00, 'None', 'https://images.unsplash.com/photo-1585032226651-759b368d7246'],
-      ['Mixed Veg Noodles (Normal)', 'Noodles', 119.00, 'None', 'https://images.unsplash.com/photo-1585032226651-759b368d7246'],
-      ['Mixed Veg Noodles (Schezwan)', 'Noodles', 129.00, 'None', 'https://images.unsplash.com/photo-1585032226651-759b368d7246'],
+      ['Gobi Fried Noodles (Schezwan)', 'Noodles', 89.00, 'None', 'images/gobi_fried_noodles_schezwan.png'],
+      ['Mixed Veg Noodles (Normal)', 'Noodles', 119.00, 'None', 'images/mixed_veg_noodles_normal.png'],
+      ['Mixed Veg Noodles (Schezwan)', 'Noodles', 129.00, 'None', 'images/mixed_veg_noodles_schezwan.png'],
 
       // NOODLES NON-VEG
       ['Chicken Noodles (Normal)', 'Noodles', 120.00, 'None', 'images/chicken_noodles_normal.png'],
@@ -1044,6 +1044,31 @@ async function initDb() {
   // Update Chicken Keema Noodles (Schezwan) image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/chicken_keema_noodles_schezwan.png' WHERE name = 'Chicken Keema Noodles (Schezwan)'"
+  );
+
+  // Update Gobi Fried Noodles (Schezwan) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/gobi_fried_noodles_schezwan.png' WHERE name = 'Gobi Fried Noodles (Schezwan)'"
+  );
+
+  // Update Mixed Veg Noodles (Normal) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/mixed_veg_noodles_normal.png' WHERE name = 'Mixed Veg Noodles (Normal)'"
+  );
+
+  // Update Mixed Veg Noodles (Schezwan) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/mixed_veg_noodles_schezwan.png' WHERE name = 'Mixed Veg Noodles (Schezwan)'"
+  );
+
+  // Update Mushroom Noodles (Normal) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/mushroom_noodles_normal.png' WHERE name = 'Mushroom Noodles (Normal)'"
+  );
+
+  // Update Mushroom Noodles (Schezwan) image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/mushroom_noodles_schezwan.png' WHERE name = 'Mushroom Noodles (Schezwan)'"
   );
 
 }
