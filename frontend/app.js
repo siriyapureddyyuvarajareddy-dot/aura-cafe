@@ -2232,17 +2232,12 @@ async function updateOrderEntryConsole() {
           </div>
           ${isWarning ? `<div style="color:var(--danger); font-size:0.65rem; margin-top:2px; font-weight:600;">⚠ Conflicts preference</div>` : ''}
           <button class="btn-stock" style="margin-top: 6px; width: 100%; font-size: 0.7rem; padding: 4px 8px; border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition-smooth); font-weight: 600; text-align: center; border: 1px solid ${isAvailable ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)'}; background: ${isAvailable ? 'rgba(16, 185, 129, 0.12)' : 'rgba(239, 68, 68, 0.12)'}; color: ${isAvailable ? 'var(--accent)' : 'var(--danger)'};">
-            ${isAvailable ? 'In Stock' : 'Out of Stock'}
+            ${isAvailable ? 'Add to Cart' : 'Out of Stock'}
           </button>
         </div>
       `;
 
       card.onclick = (e) => {
-        if (e.target.classList.contains('btn-stock')) {
-          e.stopPropagation();
-          toggleItemAvailability(item.id, isAvailable ? 0 : 1);
-          return;
-        }
         if (!isAvailable) {
           alert('This item is currently out of stock.');
           return;
