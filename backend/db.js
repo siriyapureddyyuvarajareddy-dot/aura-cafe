@@ -558,13 +558,13 @@ async function initDb() {
       ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'images/chicken_samosa.png'],
 
       // SANDWICH
-      ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'images/paneer_sandwich.png'],
       ['Veg Sandwich', 'Sandwich', 59.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-      ['Mixed Veg Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-      ['Mushroom Sandwich', 'Sandwich', 89.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Mixed Veg Sandwich', 'Sandwich', 69.00, 'None', 'images/mixed_veg_sandwich.png'],
+      ['Mushroom Sandwich', 'Sandwich', 89.00, 'None', 'images/mushroom_sandwich.png'],
       ['Cheesy Chicken Sandwich', 'Sandwich', 139.00, 'None', 'images/cheesy_chicken_sandwich.png'],
-      ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-      ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+      ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/tandoori_chicken_sandwich.png'],
+      ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/peri_peri_chicken_sandwich.png'],
       ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/crispy_chicken_sandwich.png'],
 
       // Test suite required items (for public_orders_test.js and room_service_test.js compatibility)
@@ -760,13 +760,13 @@ async function initDb() {
     ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'images/chicken_samosa.png'],
 
     // SANDWICH
-    ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'images/paneer_sandwich.png'],
     ['Veg Sandwich', 'Sandwich', 59.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-    ['Mixed Veg Sandwich', 'Sandwich', 69.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-    ['Mushroom Sandwich', 'Sandwich', 89.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Mixed Veg Sandwich', 'Sandwich', 69.00, 'None', 'images/mixed_veg_sandwich.png'],
+    ['Mushroom Sandwich', 'Sandwich', 89.00, 'None', 'images/mushroom_sandwich.png'],
     ['Cheesy Chicken Sandwich', 'Sandwich', 139.00, 'None', 'images/cheesy_chicken_sandwich.png'],
-    ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
-    ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
+    ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/tandoori_chicken_sandwich.png'],
+    ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/peri_peri_chicken_sandwich.png'],
     ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/crispy_chicken_sandwich.png']
   ];
 
@@ -1299,6 +1299,31 @@ async function initDb() {
   // Update Crispy Chicken Sandwich image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/crispy_chicken_sandwich.png' WHERE name = 'Crispy Chicken Sandwich'"
+  );
+
+  // Update Paneer Sandwich image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/paneer_sandwich.png' WHERE name = 'Paneer Sandwich'"
+  );
+
+  // Update Mixed Veg Sandwich image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/mixed_veg_sandwich.png' WHERE name = 'Mixed Veg Sandwich'"
+  );
+
+  // Update Mushroom Sandwich image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/mushroom_sandwich.png' WHERE name = 'Mushroom Sandwich'"
+  );
+
+  // Update Tandoori Chicken Sandwich image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/tandoori_chicken_sandwich.png' WHERE name = 'Tandoori Chicken Sandwich'"
+  );
+
+  // Update Peri Peri Chicken Sandwich image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/peri_peri_chicken_sandwich.png' WHERE name = 'Peri Peri Chicken Sandwich'"
   );
 
 }
