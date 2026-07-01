@@ -282,6 +282,7 @@ function renderCategoryTabs() {
     'Maggi',
     'Milkshakes',
     'Fresh Fruit Juices',
+    'Soft Drinks',
     'Desserts',
     'Soups'
   ];
@@ -514,6 +515,7 @@ function renderMenu() {
       'Maggi',
       'Milkshakes',
       'Fresh Fruit Juices',
+      'Soft Drinks',
       'Desserts',
       'Soups'
     ];

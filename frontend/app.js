@@ -1933,6 +1933,7 @@ function renderAdminCategoryTabs() {
     'Maggi',
     'Milkshakes',
     'Fresh Fruit Juices',
+    'Soft Drinks',
     'Desserts',
     'Soups'
   ];
@@ -2262,6 +2263,7 @@ async function updateOrderEntryConsole() {
         'Maggi',
         'Milkshakes',
         'Fresh Fruit Juices',
+        'Soft Drinks',
         'Desserts',
         'Soups'
       ];

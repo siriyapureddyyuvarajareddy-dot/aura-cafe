@@ -557,6 +557,15 @@ async function initDb() {
       ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'images/paneer_samosa.png'],
       ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'images/chicken_samosa.png'],
 
+      // SOFT DRINKS
+      ['Waterbottle 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+      ['Water bottle 10', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+      ['Thumbsup 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+      ['Sprite 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+      ['Pulpy 25', 'Soft Drinks', 25.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+      ['Coke 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+      ['Maaza 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+
       // SANDWICH
       ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'images/paneer_sandwich.png'],
       ['Veg Sandwich', 'Sandwich', 59.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
@@ -758,6 +767,15 @@ async function initDb() {
     ['Corn Somosa ( 4 Pices)', 'Samosa', 59.00, 'None', 'images/corn_samosa.png'],
     ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'images/paneer_samosa.png'],
     ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'images/chicken_samosa.png'],
+
+    // SOFT DRINKS
+    ['Waterbottle 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+    ['Water bottle 10', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+    ['Thumbsup 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+    ['Sprite 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+    ['Pulpy 25', 'Soft Drinks', 25.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+    ['Coke 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+    ['Maaza 20', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
 
     // SANDWICH
     ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'images/paneer_sandwich.png'],
