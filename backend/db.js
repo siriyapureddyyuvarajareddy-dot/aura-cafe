@@ -410,12 +410,12 @@ async function initDb() {
       ['Scrambled Egg', 'Egg Items', 39.00, 'None', 'https://images.unsplash.com/photo-1551183053-bf91a1d81141'],
       ['Bread Omlete', 'Egg Items', 70.00, 'None', 'https://images.unsplash.com/photo-1525351484163-7529414344d8'],
       ['Sunny Side Up', 'Egg Items', 29.00, 'None', 'https://images.unsplash.com/photo-1506084868230-bb9d95c24759'],
-      ['Cheese omlete', 'Egg Items', 39.00, 'None', 'https://images.unsplash.com/photo-1600271886742-f049cd451bba'],
+      ['Cheese omlete', 'Egg Items', 39.00, 'None', 'images/cheese_omlete.png'],
 
       // NON VEG BURGERS
-      ['Crispy Chicken Burger', 'Non-Veg Burgers', 119.00, 'None', 'https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b'],
+      ['Crispy Chicken Burger', 'Non-Veg Burgers', 119.00, 'None', 'images/crispy_chicken_burger.png'],
       ['BBQ Chicken Burger', 'Non-Veg Burgers', 129.00, 'None', 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd'],
-      ['Chicken Smash Burger', 'Non-Veg Burgers', 139.00, 'None', 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5'],
+      ['Chicken Smash Burger', 'Non-Veg Burgers', 139.00, 'None', 'images/chicken_smash_burger.png'],
       ['Chicken Mini Burger 8 Pic', 'Non-Veg Burgers', 99.00, 'None', 'images/chicken_mini_burger_8pic.png'],
 
       // FRIED VEG
@@ -794,6 +794,21 @@ async function initDb() {
   // Update Chicken Mini Burger 8 Pic image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/chicken_mini_burger_8pic.png' WHERE name = 'Chicken Mini Burger 8 Pic'"
+  );
+
+  // Update Chicken Smash Burger image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_smash_burger.png' WHERE name = 'Chicken Smash Burger'"
+  );
+
+  // Update Crispy Chicken Burger image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/crispy_chicken_burger.png' WHERE name = 'Crispy Chicken Burger'"
+  );
+
+  // Update Cheese omlete image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/cheese_omlete.png' WHERE name = 'Cheese omlete'"
   );
 
 }
