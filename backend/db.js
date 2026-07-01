@@ -528,7 +528,7 @@ async function initDb() {
       ['Coffee', 'Milk', 20.00, 'None', 'images/coffee.png'],
       ['Lemon Tea', 'Milk', 25.00, 'None', 'images/lemon_tea.png'],
       ['Sonti Tea', 'Milk', 25.00, 'None', 'images/sonti_tea.png'],
-      ['Green Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Green Tea', 'Milk', 25.00, 'None', 'images/green_tea.png'],
       ['Badam Milk', 'Milk', 30.00, 'None', 'images/badam_milk.png'],
       ['Boost', 'Milk', 30.00, 'None', 'images/boost.png'],
       ['Horlics', 'Milk', 30.00, 'None', 'images/horlicks.png'],
@@ -737,7 +737,7 @@ async function initDb() {
     ['Coffee', 'Milk', 20.00, 'None', 'images/coffee.png'],
     ['Lemon Tea', 'Milk', 25.00, 'None', 'images/lemon_tea.png'],
     ['Sonti Tea', 'Milk', 25.00, 'None', 'images/sonti_tea.png'],
-    ['Green Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Green Tea', 'Milk', 25.00, 'None', 'images/green_tea.png'],
     ['Badam Milk', 'Milk', 30.00, 'None', 'images/badam_milk.png'],
     ['Boost', 'Milk', 30.00, 'None', 'images/boost.png'],
     ['Horlics', 'Milk', 30.00, 'None', 'images/horlicks.png'],
@@ -1373,6 +1373,11 @@ async function initDb() {
   // Update Water bottle image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/water_bottle.png' WHERE name = 'Water bottle'"
+  );
+
+  // Update Green Tea image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/green_tea.png' WHERE name = 'Green Tea'"
   );
 
   // Force all items to be in stock forever in production/dev
