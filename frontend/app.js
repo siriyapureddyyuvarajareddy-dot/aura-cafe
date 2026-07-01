@@ -1600,7 +1600,6 @@ async function loadBookings() {
       tr.innerHTML = `
         <td style="font-weight:600;">${b.guest_name}</td>
         <td>${b.guest_type}</td>
-        <td>${roomStr}</td>
         <td>${b.table_number ? `Table ${b.table_number}` : 'Room Service'}</td>
         <td>${b.booking_date} @ ${formatTime12H(b.booking_time)}</td>
         <td>${b.guest_count}</td>
