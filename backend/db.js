@@ -421,8 +421,8 @@ async function initDb() {
       // FRIED VEG
       ['French Fries', 'Fried Veg', 69.00, 'None', 'https://images.unsplash.com/photo-1576107232684-1279f390859f'],
       ['Peri Peri Fries', 'Fried Veg', 89.00, 'None', 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877'],
-      ['Veg Fried Chees Balls', 'Fried Veg', 79.00, 'None', 'https://images.unsplash.com/photo-1548340748-6d2b7d7db87d'],
-      ['Smiley Fries', 'Fried Veg', 69.00, 'None', 'https://images.unsplash.com/photo-1576107232684-1279f390859f'],
+      ['Veg Fried Chees Balls', 'Fried Veg', 79.00, 'None', 'images/veg_fried_cheese_balls.png'],
+      ['Smiley Fries', 'Fried Veg', 69.00, 'None', 'images/smiley_fries.png'],
       ['Veg Nuggets', 'Fried Veg', 79.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
 
       // VEG STARTERS
@@ -819,6 +819,16 @@ async function initDb() {
   // Update Sunny Side Up image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/sunny_side_up.png' WHERE name = 'Sunny Side Up'"
+  );
+
+  // Update Veg Fried Chees Balls image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/veg_fried_cheese_balls.png' WHERE name = 'Veg Fried Chees Balls'"
+  );
+
+  // Update Smiley Fries image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/smiley_fries.png' WHERE name = 'Smiley Fries'"
   );
 
 }
