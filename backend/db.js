@@ -401,7 +401,7 @@ async function initDb() {
   if (menuCount.count === 0) {
     const items = [
       // VEG BURGERS
-      ['Crispy Veg Burger', 'Veg Burgers', 99.00, 'None', 'https://images.unsplash.com/photo-1571091718767-18b5b1457add'],
+      ['Crispy Veg Burger', 'Veg Burgers', 99.00, 'None', 'images/crispy_veg_burger.png'],
       ['Paneer Burger', 'Veg Burgers', 119.00, 'None', 'https://images.unsplash.com/photo-1525059696034-4967a8e1dca2'],
       ['Veg Mini Burger 8Pic', 'Veg Burgers', 79.00, 'None', 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd'],
 
@@ -780,6 +780,11 @@ async function initDb() {
     }
   }
   console.log('Incremental menu checks finished.');
+
+  // Update Crispy Veg Burger image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/crispy_veg_burger.png' WHERE name = 'Crispy Veg Burger'"
+  );
 
 }
 
