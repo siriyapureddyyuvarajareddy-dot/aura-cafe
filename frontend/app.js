@@ -1766,7 +1766,7 @@ async function viewBookingDetails(id) {
           <div>
             <p style="color:var(--text-muted); font-size:0.75rem;">GUEST DETAILS</p>
             <p style="font-size:1.15rem; font-weight:700; margin-top:4px;">${data.booking.guest_name}</p>
-            <p style="color:var(--text-muted); margin-top:4px;">${data.booking.guest_type} ${data.booking.room_number ? `(Room ${data.booking.room_number})` : ''}</p>
+            <p style="color:var(--text-muted); margin-top:4px;">${data.booking.guest_type}</p>
           </div>
           <div>
             <p style="color:var(--text-muted); font-size:0.75rem;">RESERVATION DETAILS</p>
