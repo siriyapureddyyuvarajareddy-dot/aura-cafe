@@ -557,15 +557,6 @@ async function initDb() {
       ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'images/paneer_samosa.png'],
       ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'images/chicken_samosa.png'],
 
-      // SOFT DRINKS
-      ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
-      ['Water bottle', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
-      ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-      ['Sprite', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-      ['Pulpy', 'Soft Drinks', 25.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-      ['Coke', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-      ['Maaza', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-
       // SANDWICH
       ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'images/paneer_sandwich.png'],
       ['Veg Sandwich', 'Sandwich', 59.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
@@ -579,7 +570,14 @@ async function initDb() {
       // Test suite required items (for public_orders_test.js and room_service_test.js compatibility)
       ['Veg Biryani', 'Biryani', 250.00, 'None', 'images/veg_biryani.png'],
       ['Tomato Soup', 'Soups', 120.00, 'None', 'https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg'],
-      ['Gulab Jamun', 'Desserts', 90.00, 'None', 'https://i.pinimg.com/736x/30/6e/ac/306eac21d95c385ed486ea5da524b8a5.jpg']
+      ['Gulab Jamun', 'Desserts', 90.00, 'None', 'https://i.pinimg.com/736x/30/6e/ac/306eac21d95c385ed486ea5da524b8a5.jpg'],
+      ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+      ['Water bottle', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+      ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+      ['Sprite', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+      ['Pulpy', 'Soft Drinks', 25.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+      ['Coke', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+      ['Maaza', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97']
     ];
 
     for (let item of items) {
@@ -768,15 +766,6 @@ async function initDb() {
     ['Paneer Somosa (4 Pices)', 'Samosa', 69.00, 'None', 'images/paneer_samosa.png'],
     ['Chicken Somosa ( 4 Pices)', 'Samosa', 69.00, 'None', 'images/chicken_samosa.png'],
 
-    // SOFT DRINKS
-    ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
-    ['Water bottle', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
-    ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-    ['Sprite', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-    ['Pulpy', 'Soft Drinks', 25.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-    ['Coke', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-    ['Maaza', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
-
     // SANDWICH
     ['Paneer Sandwich', 'Sandwich', 69.00, 'None', 'images/paneer_sandwich.png'],
     ['Veg Sandwich', 'Sandwich', 59.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
@@ -785,11 +774,15 @@ async function initDb() {
     ['Cheesy Chicken Sandwich', 'Sandwich', 139.00, 'None', 'images/cheesy_chicken_sandwich.png'],
     ['Tandoori Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/tandoori_chicken_sandwich.png'],
     ['Peri Peri Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/peri_peri_chicken_sandwich.png'],
-    ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/crispy_chicken_sandwich.png']
+    ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'images/crispy_chicken_sandwich.png'],
+    ['Waterbottle', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+    ['Water bottle', 'Soft Drinks', 10.00, 'None', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8'],
+    ['Thumbsup', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+    ['Sprite', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+    ['Pulpy', 'Soft Drinks', 25.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+    ['Coke', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97'],
+    ['Maaza', 'Soft Drinks', 20.00, 'None', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97']
   ];
-
-  // Delete old soft drink names with price suffix if they exist
-  await dbQuery.run("DELETE FROM menu_items WHERE name IN ('Waterbottle 20', 'Water bottle 10', 'Thumbsup 20', 'Sprite 20', 'Pulpy 25', 'Coke 20', 'Maaza 20')");
 
   for (let item of newMenuItems) {
     const existing = await dbQuery.get('SELECT id FROM menu_items WHERE name = ?', [item[0]]);
