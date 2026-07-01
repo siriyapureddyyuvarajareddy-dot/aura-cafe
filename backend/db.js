@@ -438,17 +438,17 @@ async function initDb() {
       // NON-VEG STARTERS
       ['Chicken 65', 'Non-Veg Starters', 120.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
       ['Chilli Chicken', 'Non-Veg Starters', 139.00, 'None', 'images/chilli_chicken.png'],
-      ['Lemon Chicken', 'Non-Veg Starters', 140.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
-      ['Pepper Chicken', 'Non-Veg Starters', 140.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
+      ['Lemon Chicken', 'Non-Veg Starters', 140.00, 'None', 'images/lemon_chicken.png'],
+      ['Pepper Chicken', 'Non-Veg Starters', 140.00, 'None', 'images/pepper_chicken.png'],
       ['Garlic Chicken', 'Non-Veg Starters', 119.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
       ['Dragon Chicken', 'Non-Veg Starters', 160.00, 'None', 'https://images.unsplash.com/photo-1527324688151-0e627063f2b1'],
-      ['Kaju Chicken', 'Non-Veg Starters', 159.00, 'None', 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143'],
-      ['Juicy Lolipop', 'Non-Veg Starters', 180.00, 'None', 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7'],
-      ['Dry Chicken', 'Non-Veg Starters', 139.00, 'None', 'https://images.unsplash.com/photo-1598515214211-89d3e73ae83b'],
-      ['Chilly Prawns', 'Non-Veg Starters', 170.00, 'None', 'https://images.unsplash.com/photo-1565557623262-b51c2513a641'],
-      ['Prawns 65', 'Non-Veg Starters', 149.00, 'None', 'https://images.unsplash.com/photo-1565557623262-b51c2513a641'],
-      ['Prawns Pepper', 'Non-Veg Starters', 190.00, 'None', 'https://images.unsplash.com/photo-1565557623262-b51c2513a641'],
-      ['Prawns Manchurian', 'Non-Veg Starters', 190.00, 'None', 'https://images.unsplash.com/photo-1565557623262-b51c2513a641'],
+      ['Kaju Chicken', 'Non-Veg Starters', 159.00, 'None', 'images/kaju_chicken.png'],
+      ['Juicy Lolipop', 'Non-Veg Starters', 180.00, 'None', 'images/juicy_lolipop.png'],
+      ['Dry Chicken', 'Non-Veg Starters', 139.00, 'None', 'images/dry_chicken.png'],
+      ['Chilly Prawns', 'Non-Veg Starters', 170.00, 'None', 'images/chilly_prawns.png'],
+      ['Prawns 65', 'Non-Veg Starters', 149.00, 'None', 'images/prawns_65.png'],
+      ['Prawns Pepper', 'Non-Veg Starters', 190.00, 'None', 'images/prawns_pepper.png'],
+      ['Prawns Manchurian', 'Non-Veg Starters', 190.00, 'None', 'images/prawns_manchurian.png'],
 
       // BIRYANI
       ['Peddamma Biriyani', 'Biryani', 140.00, 'None', 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8'],
@@ -568,7 +568,7 @@ async function initDb() {
       ['Crispy Chicken Sandwich', 'Sandwich', 99.00, 'None', 'https://images.unsplash.com/photo-1509722747041-616f39b57569'],
 
       // Test suite required items (for public_orders_test.js and room_service_test.js compatibility)
-      ['Veg Biryani', 'Biryani', 250.00, 'None', 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8'],
+      ['Veg Biryani', 'Biryani', 250.00, 'None', 'images/veg_biryani.png'],
       ['Tomato Soup', 'Soups', 120.00, 'None', 'https://images.pexels.com/photos/539451/pexels-photo-539451.jpeg'],
       ['Gulab Jamun', 'Desserts', 90.00, 'None', 'https://i.pinimg.com/736x/30/6e/ac/306eac21d95c385ed486ea5da524b8a5.jpg']
     ];
@@ -874,6 +874,56 @@ async function initDb() {
   // Update Chilli Chicken image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/chilli_chicken.png' WHERE name = 'Chilli Chicken'"
+  );
+
+  // Update Lemon Chicken image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/lemon_chicken.png' WHERE name = 'Lemon Chicken'"
+  );
+
+  // Update Pepper Chicken image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/pepper_chicken.png' WHERE name = 'Pepper Chicken'"
+  );
+
+  // Update Kaju Chicken image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/kaju_chicken.png' WHERE name = 'Kaju Chicken'"
+  );
+
+  // Update Juicy Lolipop image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/juicy_lolipop.png' WHERE name = 'Juicy Lolipop'"
+  );
+
+  // Update Dry Chicken image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/dry_chicken.png' WHERE name = 'Dry Chicken'"
+  );
+
+  // Update Chilly Prawns image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chilly_prawns.png' WHERE name = 'Chilly Prawns'"
+  );
+
+  // Update Prawns 65 image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/prawns_65.png' WHERE name = 'Prawns 65'"
+  );
+
+  // Update Prawns Pepper image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/prawns_pepper.png' WHERE name = 'Prawns Pepper'"
+  );
+
+  // Update Prawns Manchurian image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/prawns_manchurian.png' WHERE name = 'Prawns Manchurian'"
+  );
+
+  // Update Veg Biryani image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/veg_biryani.png' WHERE name = 'Veg Biryani'"
   );
 
 }
