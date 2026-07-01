@@ -501,50 +501,50 @@ async function initDb() {
       ['Prawns Fried Noodles (Schezwan)', 'Noodles', 149.00, 'None', 'images/prawns_fried_noodles_schezwan.png'],
 
       // MAGGIE
-      ['Maggie', 'Maggi', 39.00, 'None', 'https://images.unsplash.com/photo-1612966608967-312ba599102e'],
-      ['Veg Maggie', 'Maggi', 49.00, 'None', 'https://images.unsplash.com/photo-1612966608967-312ba599102e'],
-      ['Egg Maggie', 'Maggi', 59.00, 'None', 'https://images.unsplash.com/photo-1612966608967-312ba599102e'],
-      ['Paneer Maggie', 'Maggi', 79.00, 'None', 'https://images.unsplash.com/photo-1612966608967-312ba599102e'],
-      ['Cheese Maggie', 'Maggi', 79.00, 'None', 'https://images.unsplash.com/photo-1612966608967-312ba599102e'],
+      ['Maggie', 'Maggi', 39.00, 'None', 'images/maggie.png'],
+      ['Veg Maggie', 'Maggi', 49.00, 'None', 'images/veg_maggie.png'],
+      ['Egg Maggie', 'Maggi', 59.00, 'None', 'images/egg_maggie.png'],
+      ['Paneer Maggie', 'Maggi', 79.00, 'None', 'images/paneer_maggie.png'],
+      ['Cheese Maggie', 'Maggi', 79.00, 'None', 'images/cheese_maggie.png'],
 
       // MILK SHAKE
-      ['Strawberry Shake', 'Milkshakes', 99.00, 'None', 'https://images.unsplash.com/photo-1572490122747-3968b75cc699'],
+      ['Strawberry Shake', 'Milkshakes', 99.00, 'None', 'images/strawberry_shake.png'],
       ['Oreo Shake', 'Milkshakes', 99.00, 'None', 'https://images.unsplash.com/photo-1572490122747-3968b75cc699'],
-      ['Vanilla Shake', 'Milkshakes', 79.00, 'None', 'https://images.unsplash.com/photo-1572490122747-3968b75cc699'],
-      ['Chocolate Shake', 'Milkshakes', 89.00, 'None', 'https://images.unsplash.com/photo-1572490122747-3968b75cc699'],
-      ['Cold Coffee', 'Milkshakes', 139.00, 'None', 'https://images.unsplash.com/photo-1572490122747-3968b75cc699'],
+      ['Vanilla Shake', 'Milkshakes', 79.00, 'None', 'images/vanilla_shake.png'],
+      ['Chocolate Shake', 'Milkshakes', 89.00, 'None', 'images/chocolate_shake.png'],
+      ['Cold Coffee', 'Milkshakes', 139.00, 'None', 'images/cold_coffee.png'],
 
       // FRESH FRUIT JUICE
-      ['Lemon', 'Fresh Fruit Juices', 39.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
+      ['Lemon', 'Fresh Fruit Juices', 39.00, 'None', 'images/lemon_juice.png'],
       ['Watermelon', 'Fresh Fruit Juices', 49.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
-      ['Pomegranate', 'Fresh Fruit Juices', 90.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
-      ['Pineapple', 'Fresh Fruit Juices', 70.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
-      ['Orange', 'Fresh Fruit Juices', 69.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
-      ['Apple', 'Fresh Fruit Juices', 90.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
-      ['Grapes', 'Fresh Fruit Juices', 49.00, 'None', 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb'],
+      ['Pomegranate', 'Fresh Fruit Juices', 90.00, 'None', 'images/pomegranate_juice.png'],
+      ['Pineapple', 'Fresh Fruit Juices', 70.00, 'None', 'images/pineapple_juice.png'],
+      ['Orange', 'Fresh Fruit Juices', 69.00, 'None', 'images/orange_juice.png'],
+      ['Apple', 'Fresh Fruit Juices', 90.00, 'None', 'images/apple_juice.png'],
+      ['Grapes', 'Fresh Fruit Juices', 49.00, 'None', 'images/grapes_juice.png'],
 
       // MILK
-      ['Tea', 'Milk', 15.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Tea', 'Milk', 15.00, 'None', 'images/tea.png'],
       ['Coffee', 'Milk', 20.00, 'None', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93'],
-      ['Lemon Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1555597673-b21d5c935865'],
-      ['Sonti Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Lemon Tea', 'Milk', 25.00, 'None', 'images/lemon_tea.png'],
+      ['Sonti Tea', 'Milk', 25.00, 'None', 'images/sonti_tea.png'],
       ['Green Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
-      ['Badam Milk', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
-      ['Boost', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
-      ['Horlics', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
-      ['Ginger Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+      ['Badam Milk', 'Milk', 30.00, 'None', 'images/badam_milk.png'],
+      ['Boost', 'Milk', 30.00, 'None', 'images/boost.png'],
+      ['Horlics', 'Milk', 30.00, 'None', 'images/horlicks.png'],
+      ['Ginger Tea', 'Milk', 25.00, 'None', 'images/ginger_tea.png'],
 
       // FRIED CHICKEN ITEMS
-      ['Chicken strips 4pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Chicken strips 4pcs', 'Fried Chicken Items', 99.00, 'None', 'images/chicken_strips.png'],
       ['Chicken wings 4pcs', 'Fried Chicken Items', 120.00, 'None', 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec'],
       ['Chicken cheesy shorts 6 pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-      ['Chicken popcorn', 'Fried Chicken Items', 89.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-      ['Chicken nuggets 8pcs', 'Fried Chicken Items', 89.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Chicken popcorn', 'Fried Chicken Items', 89.00, 'None', 'images/chicken_popcorn.png'],
+      ['Chicken nuggets 8pcs', 'Fried Chicken Items', 89.00, 'None', 'images/chicken_nuggets.png'],
       ['Peri peri chicken loaded', 'Fried Chicken Items', 139.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-      ['Fish finger 5pcs', 'Fried Chicken Items', 149.00, 'None', 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec'],
-      ['Krunchy Fried chicken 1pc', 'Fried Chicken Items', 60.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-      ['Krunchy Fried chicken 2pc', 'Fried Chicken Items', 110.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-      ['Krunchy fried chicken bucket 12pcs', 'Fried Chicken Items', 669.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+      ['Fish finger 5pcs', 'Fried Chicken Items', 149.00, 'None', 'images/fish_fingers.png'],
+      ['Krunchy Fried chicken 1pc', 'Fried Chicken Items', 60.00, 'None', 'images/fried_chicken_1pc.png'],
+      ['Krunchy Fried chicken 2pc', 'Fried Chicken Items', 110.00, 'None', 'images/fried_chicken_2pc.png'],
+      ['Krunchy fried chicken bucket 12pcs', 'Fried Chicken Items', 669.00, 'None', 'images/fried_chicken_bucket.png'],
 
       // FRUIT BOWLS
       ['Classic Fruit Bowl', 'Fruit Bowls', 55.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
@@ -726,27 +726,27 @@ async function initDb() {
   // Incremental seed check for new items (ensures existing Turso databases get the updates)
   const newMenuItems = [
     // MILK
-    ['Tea', 'Milk', 15.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Tea', 'Milk', 15.00, 'None', 'images/tea.png'],
     ['Coffee', 'Milk', 20.00, 'None', 'https://images.unsplash.com/photo-1509042239860-f550ce710b93'],
-    ['Lemon Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1555597673-b21d5c935865'],
-    ['Sonti Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Lemon Tea', 'Milk', 25.00, 'None', 'images/lemon_tea.png'],
+    ['Sonti Tea', 'Milk', 25.00, 'None', 'images/sonti_tea.png'],
     ['Green Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
-    ['Badam Milk', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
-    ['Boost', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
-    ['Horlics', 'Milk', 30.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
-    ['Ginger Tea', 'Milk', 25.00, 'None', 'https://images.unsplash.com/photo-1576092768241-dec231879fc3'],
+    ['Badam Milk', 'Milk', 30.00, 'None', 'images/badam_milk.png'],
+    ['Boost', 'Milk', 30.00, 'None', 'images/boost.png'],
+    ['Horlics', 'Milk', 30.00, 'None', 'images/horlicks.png'],
+    ['Ginger Tea', 'Milk', 25.00, 'None', 'images/ginger_tea.png'],
 
     // FRIED CHICKEN ITEMS
-    ['Chicken strips 4pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Chicken strips 4pcs', 'Fried Chicken Items', 99.00, 'None', 'images/chicken_strips.png'],
     ['Chicken wings 4pcs', 'Fried Chicken Items', 120.00, 'None', 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec'],
     ['Chicken cheesy shorts 6 pcs', 'Fried Chicken Items', 99.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-    ['Chicken popcorn', 'Fried Chicken Items', 89.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-    ['Chicken nuggets 8pcs', 'Fried Chicken Items', 89.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Chicken popcorn', 'Fried Chicken Items', 89.00, 'None', 'images/chicken_popcorn.png'],
+    ['Chicken nuggets 8pcs', 'Fried Chicken Items', 89.00, 'None', 'images/chicken_nuggets.png'],
     ['Peri peri chicken loaded', 'Fried Chicken Items', 139.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-    ['Fish finger 5pcs', 'Fried Chicken Items', 149.00, 'None', 'https://images.unsplash.com/photo-1569058242253-92a9c755a0ec'],
-    ['Krunchy Fried chicken 1pc', 'Fried Chicken Items', 60.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-    ['Krunchy Fried chicken 2pc', 'Fried Chicken Items', 110.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
-    ['Krunchy fried chicken bucket 12pcs', 'Fried Chicken Items', 669.00, 'None', 'https://images.unsplash.com/photo-1562967914-608f82629710'],
+    ['Fish finger 5pcs', 'Fried Chicken Items', 149.00, 'None', 'images/fish_fingers.png'],
+    ['Krunchy Fried chicken 1pc', 'Fried Chicken Items', 60.00, 'None', 'images/fried_chicken_1pc.png'],
+    ['Krunchy Fried chicken 2pc', 'Fried Chicken Items', 110.00, 'None', 'images/fried_chicken_2pc.png'],
+    ['Krunchy fried chicken bucket 12pcs', 'Fried Chicken Items', 669.00, 'None', 'images/fried_chicken_bucket.png'],
 
     // FRUIT BOWLS
     ['Classic Fruit Bowl', 'Fruit Bowls', 55.00, 'None', 'https://images.unsplash.com/photo-1519996521430-02b798c1d881'],
@@ -1099,6 +1099,156 @@ async function initDb() {
   // Update Veg Fried Noodles (Schezwan) image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/veg_fried_noodles_schezwan.png' WHERE name = 'Veg Fried Noodles (Schezwan)'"
+  );
+
+  // Update Maggie image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/maggie.png' WHERE name = 'Maggie'"
+  );
+
+  // Update Veg Maggie image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/veg_maggie.png' WHERE name = 'Veg Maggie'"
+  );
+
+  // Update Egg Maggie image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/egg_maggie.png' WHERE name = 'Egg Maggie'"
+  );
+
+  // Update Paneer Maggie image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/paneer_maggie.png' WHERE name = 'Paneer Maggie'"
+  );
+
+  // Update Cheese Maggie image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/cheese_maggie.png' WHERE name = 'Cheese Maggie'"
+  );
+
+  // Update Strawberry Shake image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/strawberry_shake.png' WHERE name = 'Strawberry Shake'"
+  );
+
+  // Update Vanilla Shake image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/vanilla_shake.png' WHERE name = 'Vanilla Shake'"
+  );
+
+  // Update Chocolate Shake image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chocolate_shake.png' WHERE name = 'Chocolate Shake'"
+  );
+
+  // Update Cold Coffee image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/cold_coffee.png' WHERE name = 'Cold Coffee'"
+  );
+
+  // Update Apple juice image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/apple_juice.png' WHERE name = 'Apple'"
+  );
+
+  // Update Lemon juice image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/lemon_juice.png' WHERE name = 'Lemon'"
+  );
+
+  // Update Pomegranate juice image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/pomegranate_juice.png' WHERE name = 'Pomegranate'"
+  );
+
+  // Update Pineapple juice image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/pineapple_juice.png' WHERE name = 'Pineapple'"
+  );
+
+  // Update Orange juice image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/orange_juice.png' WHERE name = 'Orange'"
+  );
+
+  // Update Grapes juice image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/grapes_juice.png' WHERE name = 'Grapes'"
+  );
+
+  // Update Watermelon juice image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/watermelon_juice.png' WHERE name = 'Watermelon'"
+  );
+
+  // Update Badam Milk image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/badam_milk.png' WHERE name = 'Badam Milk'"
+  );
+
+  // Update Boost image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/boost.png' WHERE name = 'Boost'"
+  );
+
+  // Update Horlics image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/horlicks.png' WHERE name = 'Horlics'"
+  );
+
+  // Update Ginger Tea image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/ginger_tea.png' WHERE name = 'Ginger Tea'"
+  );
+
+  // Update Lemon Tea image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/lemon_tea.png' WHERE name = 'Lemon Tea'"
+  );
+
+  // Update Sonti Tea image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/sonti_tea.png' WHERE name = 'Sonti Tea'"
+  );
+
+  // Update Tea image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/tea.png' WHERE name = 'Tea'"
+  );
+
+  // Update Chicken nuggets 8pcs image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_nuggets.png' WHERE name = 'Chicken nuggets 8pcs'"
+  );
+
+  // Update Chicken popcorn image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_popcorn.png' WHERE name = 'Chicken popcorn'"
+  );
+
+  // Update Chicken strips 4pcs image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/chicken_strips.png' WHERE name = 'Chicken strips 4pcs'"
+  );
+
+  // Update Fish finger 5pcs image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/fish_fingers.png' WHERE name = 'Fish finger 5pcs'"
+  );
+
+  // Update Krunchy Fried chicken 1pc image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/fried_chicken_1pc.png' WHERE name = 'Krunchy Fried chicken 1pc'"
+  );
+
+  // Update Krunchy Fried chicken 2pc image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/fried_chicken_2pc.png' WHERE name = 'Krunchy Fried chicken 2pc'"
+  );
+
+  // Update Krunchy fried chicken bucket 12pcs image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/fried_chicken_bucket.png' WHERE name = 'Krunchy fried chicken bucket 12pcs'"
   );
 
 }
