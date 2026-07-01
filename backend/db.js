@@ -407,9 +407,9 @@ async function initDb() {
 
       // EGG
       ['Plain Egg', 'Egg Items', 29.00, 'None', 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc'],
-      ['Scrambled Egg', 'Egg Items', 39.00, 'None', 'https://images.unsplash.com/photo-1551183053-bf91a1d81141'],
+      ['Scrambled Egg', 'Egg Items', 39.00, 'None', 'images/scrambled_egg.png'],
       ['Bread Omlete', 'Egg Items', 70.00, 'None', 'https://images.unsplash.com/photo-1525351484163-7529414344d8'],
-      ['Sunny Side Up', 'Egg Items', 29.00, 'None', 'https://images.unsplash.com/photo-1506084868230-bb9d95c24759'],
+      ['Sunny Side Up', 'Egg Items', 29.00, 'None', 'images/sunny_side_up.png'],
       ['Cheese omlete', 'Egg Items', 39.00, 'None', 'images/cheese_omlete.png'],
 
       // NON VEG BURGERS
@@ -809,6 +809,16 @@ async function initDb() {
   // Update Cheese omlete image
   await dbQuery.run(
     "UPDATE menu_items SET image_url = 'images/cheese_omlete.png' WHERE name = 'Cheese omlete'"
+  );
+
+  // Update Scrambled Egg image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/scrambled_egg.png' WHERE name = 'Scrambled Egg'"
+  );
+
+  // Update Sunny Side Up image
+  await dbQuery.run(
+    "UPDATE menu_items SET image_url = 'images/sunny_side_up.png' WHERE name = 'Sunny Side Up'"
   );
 
 }
