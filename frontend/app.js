@@ -1226,6 +1226,20 @@ function initForms() {
   const formBooking = document.getElementById('form-booking');
   const roomNumberInput = document.getElementById('booking-room-number');
 
+  // Automatic Table to Guest Name sync
+  const tableSelect = document.getElementById('booking-table-number');
+  const guestNameInput = document.getElementById('booking-guest-name');
+  if (tableSelect && guestNameInput) {
+    tableSelect.addEventListener('change', () => {
+      const val = tableSelect.value;
+      if (val) {
+        guestNameInput.value = `Table ${val}`;
+      } else {
+        guestNameInput.value = '';
+      }
+    });
+  }
+
   // Sync native time picker and AM/PM select
   const timeInput = document.getElementById('booking-time');
   const ampmSelect = document.getElementById('booking-time-ampm');
@@ -1420,8 +1434,11 @@ function openBookingModal(existingBooking = null) {
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('booking-date').value = today;
 
-    // Set default AM/PM based on current time
+    // Set default arrival time to current time
     const now = new Date();
+    const currentHours = String(now.getHours()).padStart(2, '0');
+    const currentMinutes = String(now.getMinutes()).padStart(2, '0');
+    document.getElementById('booking-time').value = `${currentHours}:${currentMinutes}`;
     document.getElementById('booking-time-ampm').value = now.getHours() >= 12 ? 'PM' : 'AM';
   }
 
@@ -1534,7 +1551,9 @@ async function renderLiveTableMap() {
         `;
         tableDiv.onclick = () => {
           openBookingModal();
-          document.getElementById('booking-table-number').value = tNum;
+          const tSelect = document.getElementById('booking-table-number');
+          tSelect.value = tNum;
+          tSelect.dispatchEvent(new Event('change'));
         };
       }
       
